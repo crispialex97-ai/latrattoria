@@ -7,6 +7,11 @@
   <meta name="description" content="La Trattoria di Chez Ausilia — Cuisine italienne authentique à Saxon. Réservation par téléphone." />
   <title>La Trattoria di Chez Ausilia</title>
 
+  <!-- Fonts premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/site.js" defer></script>
 
@@ -19,12 +24,12 @@
 </head>
 
 <body>
-  <!-- TOP (NAV + HERO) con sfondo hero.png -->
+  <!-- TOP HERO (nav + hero) -->
   <div class="top-hero" id="top">
     <header class="site-header">
       <div class="container">
         <div class="bar">
-          <!-- BRAND con logo grande -->
+          <!-- BRAND -->
           <a class="brand" href="#top" aria-label="Aller à l'accueil">
             <img class="brand-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
             <div class="brand-text">
@@ -68,7 +73,7 @@
           </div>
           <div class="actions">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-            <a class="btn" href="#menu">🍝 Voir le menu</a>
+            <a class="btn ghost" href="#menu">🍝 Voir le menu</a>
           </div>
         </div>
       </div>
@@ -78,32 +83,29 @@
     <main class="hero-wrap" aria-label="Présentation">
       <div class="container">
         <div class="hero">
-          <!-- Infos reali sopra -->
+          <!-- Infos reali (top chips) -->
           <div class="hero-topline">
             <span class="hero-pill">Pl. de Gottefrey 2, 1907 Saxon</span>
             <span class="hero-pill">Téléphone : <a href="tel:0275650132">027 565 01 32</a></span>
             <span class="hero-pill">Horaires : <strong>Fermé</strong> · Ouvre à <strong>18:00</strong></span>
           </div>
 
-          <!-- Messaggio principale -->
           <h1 class="hero-title">
             Une vraie trattoria italienne,
             <span>comme en Italie.</span>
           </h1>
 
           <p class="hero-subtitle">
-            Recettes authentiques, produits soignés et ambiance chaleureuse.
-            Parfait pour un dîner en amoureux, un repas en famille ou une belle table entre amis.
+            Recettes authentiques, produits soignés et ambiance chaleureuse à Saxon.
+            Réservation rapide par téléphone.
           </p>
 
-          <!-- CTA -->
           <div class="hero-actions">
             <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
             <a class="btn ghost" href="#menu">Découvrir le menu</a>
             <a class="btn ghost" href="#acces">Itinéraire</a>
           </div>
 
-          <!-- Micro trust line -->
           <div class="hero-note">
             Réservation conseillée le week-end • Vins italiens sélectionnés • Desserts maison
           </div>
@@ -112,7 +114,7 @@
     </main>
   </div>
 
-  <!-- CONTENU -->
+  <!-- A PROPOS -->
   <section id="a-propos" class="section">
     <div class="container">
       <div class="section-head">
@@ -123,7 +125,7 @@
         </p>
       </div>
 
-      <div class="two-col">
+      <div class="three-col">
         <div class="panel">
           <h3>Notre cuisine</h3>
           <p>
@@ -135,6 +137,23 @@
             <li>Recettes italiennes authentiques</li>
             <li>Ambiance conviviale</li>
           </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Livraison</h3>
+          <p>
+            Commandez facilement via <strong>Glovo</strong> ou <strong>Uber Eats</strong>.
+            Retrouvez les infos pratiques et contactez-nous si besoin.
+          </p>
+          <div class="inline-actions">
+            <!-- Mets tes liens réels si tu les as -->
+            <a class="btn ghost" href="#" aria-label="Glovo">Glovo</a>
+            <a class="btn ghost" href="#" aria-label="Uber Eats">Uber Eats</a>
+          </div>
+          <div class="mini-info">
+            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br>
+            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
+          </div>
         </div>
 
         <div class="panel">
@@ -151,12 +170,14 @@
     </div>
   </section>
 
-  <!-- MENU con categorie espandibili -->
+  <!-- MENU -->
   <section id="menu" class="section">
     <div class="container">
       <div class="section-head">
         <h2>Menu</h2>
-        <p>Catégories repliables (propre sur mobile). Remplacez plats & prix avec votre carte réelle.</p>
+        <p>
+          Catégories repliables (propre sur mobile). Chaque plat peut avoir une image à droite.
+        </p>
       </div>
 
       <div class="accordion">
@@ -169,30 +190,16 @@
           <div class="acc-body">
             <div class="menu-grid">
               <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Antipasto della casa</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 16</strong>
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Antipasto della casa</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 16</strong>
+                  </div>
+                  <p>Assortiment de charcuteries & fromages, légumes, pain chaud.</p>
+                  <div class="ingredients">Ingrédients: charcuterie, fromages, légumes, huile d’olive</div>
                 </div>
-                <p>Assortiment de charcuteries & fromages, légumes, pain chaud.</p>
-              </article>
-
-              <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Bruschetta</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 10</strong>
-                </div>
-                <p>Tomates, basilic, huile d’olive, pain grillé.</p>
-              </article>
-
-              <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Carpaccio de bœuf</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 18</strong>
-                </div>
-                <p>Parmesan, roquette, citron & huile d’olive.</p>
+                <img class="dish-img" src="assets/dishes/antipasto.jpg" alt="Antipasto della casa" loading="lazy">
               </article>
             </div>
           </div>
@@ -207,30 +214,29 @@
           <div class="acc-body">
             <div class="menu-grid">
               <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Spaghetti alla Carbonara</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 21</strong>
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Spaghetti alla Carbonara</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 21</strong>
+                  </div>
+                  <p>Guanciale, pecorino, œufs, poivre noir.</p>
+                  <div class="ingredients">Ingrédients: spaghetti, guanciale, pecorino, œufs, poivre</div>
                 </div>
-                <p>Guanciale, pecorino, œufs, poivre noir.</p>
+                <img class="dish-img" src="assets/dishes/carbonara.jpg" alt="Spaghetti alla Carbonara" loading="lazy">
               </article>
 
               <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Risotto aux champignons</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 22</strong>
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Risotto aux champignons</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 22</strong>
+                  </div>
+                  <p>Crémeux, champignons du jour, parfum de thym.</p>
+                  <div class="ingredients">Ingrédients: riz, champignons, parmesan, thym</div>
                 </div>
-                <p>Crémeux, champignons du jour, parfum de thym.</p>
-              </article>
-
-              <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Penne all’arrabbiata</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 18</strong>
-                </div>
-                <p>Tomate, piment, ail, basilic.</p>
+                <img class="dish-img" src="assets/dishes/risotto.jpg" alt="Risotto aux champignons" loading="lazy">
               </article>
             </div>
           </div>
@@ -245,30 +251,29 @@
           <div class="acc-body">
             <div class="menu-grid">
               <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Tagliata de bœuf</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 34</strong>
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Tagliata de bœuf</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 34</strong>
+                  </div>
+                  <p>Roquette, parmesan, réduction délicate.</p>
+                  <div class="ingredients">Ingrédients: bœuf, roquette, parmesan, huile d’olive</div>
                 </div>
-                <p>Roquette, parmesan, réduction délicate.</p>
+                <img class="dish-img" src="assets/dishes/tagliata.jpg" alt="Tagliata de bœuf" loading="lazy">
               </article>
 
               <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Parmigiana</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 24</strong>
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Parmigiana</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 24</strong>
+                  </div>
+                  <p>Aubergines, tomate, mozzarella.</p>
+                  <div class="ingredients">Ingrédients: aubergines, tomate, mozzarella, basilic</div>
                 </div>
-                <p>Aubergines, tomate, mozzarella.</p>
-              </article>
-
-              <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Escalope milanaise</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 28</strong>
-                </div>
-                <p>Panée, citron, salade croquante.</p>
+                <img class="dish-img" src="assets/dishes/parmigiana.jpg" alt="Parmigiana" loading="lazy">
               </article>
             </div>
           </div>
@@ -283,30 +288,16 @@
           <div class="acc-body">
             <div class="menu-grid">
               <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Tiramisù maison</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 12</strong>
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Tiramisù maison</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 12</strong>
+                  </div>
+                  <p>Crème légère, cacao, café, biscuits.</p>
+                  <div class="ingredients">Ingrédients: mascarpone, café, cacao, biscuits</div>
                 </div>
-                <p>Crème légère, cacao, café, biscuits.</p>
-              </article>
-
-              <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Panna cotta</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 11</strong>
-                </div>
-                <p>Vanille, coulis du jour.</p>
-              </article>
-
-              <article class="menu-item">
-                <div class="menu-row">
-                  <h4>Café gourmand</h4>
-                  <div class="dots"></div>
-                  <strong>CHF 13</strong>
-                </div>
-                <p>Un café + mini desserts maison.</p>
+                <img class="dish-img" src="assets/dishes/tiramisu.jpg" alt="Tiramisù maison" loading="lazy">
               </article>
             </div>
           </div>
@@ -324,7 +315,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Horaires</h2>
-        <p>Informations pratiques (à adapter si vous voulez le détail par jour).</p>
+        <p>Informations actuelles (à compléter si vous souhaitez afficher les horaires par jour).</p>
       </div>
 
       <div class="panel">
@@ -342,7 +333,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Accès</h2>
-        <p>Carte centrée sur Saxon. Si vous me donnez le lien Google Maps exact, je l’intègre proprement.</p>
+        <p>Pl. de Gottefrey 2, 1907 Saxon</p>
       </div>
 
       <div class="map">
@@ -356,7 +347,7 @@
     </div>
   </section>
 
-  <!-- FOOTER VRAI -->
+  <!-- FOOTER vero -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-main">
@@ -364,34 +355,33 @@
           <img class="footer-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
           <div>
             <div class="footer-name">La Trattoria di Chez Ausilia</div>
-            <div class="footer-tag">Cuisine italienne • Saxon</div>
+            <div class="footer-tag">Pl. de Gottefrey 2, 1907 Saxon • 027 565 01 32</div>
           </div>
         </div>
 
         <div class="footer-block">
-          <div class="footer-title">Contact</div>
-          <div class="footer-text">
-            Pl. de Gottefrey 2, 1907 Saxon<br />
-            <a href="tel:0275650132">027 565 01 32</a>
-          </div>
+          <div class="footer-title">Réserver</div>
+          <div class="footer-text">Réservation par téléphone</div>
           <div class="footer-cta">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
           </div>
         </div>
 
         <div class="footer-block">
-          <div class="footer-title">Horaires</div>
+          <div class="footer-title">Livraison</div>
           <div class="footer-text">
-            Fermé · Ouvre à 18:00<br />
-            (Mettez ici vos horaires complets si vous voulez)
+            Disponible sur Glovo & Uber Eats
+          </div>
+          <div class="footer-links">
+            <a href="#">Glovo</a>
+            <a href="#">Uber Eats</a>
           </div>
         </div>
 
         <div class="footer-block">
-          <div class="footer-title">Suivez-nous</div>
-          <div class="footer-links">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+          <div class="footer-title">Horaires</div>
+          <div class="footer-text">
+            Fermé · Ouvre à 18:00
           </div>
         </div>
       </div>
