@@ -10,7 +10,7 @@
   <!-- Fonts premium -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/site.js" defer></script>
@@ -26,7 +26,7 @@
 <body>
   <!-- TOP HERO (nav + hero) -->
   <div class="top-hero" id="top">
-    <header class="site-header">
+    <header class="site-header" id="siteHeader">
       <div class="container">
         <div class="bar">
           <!-- BRAND -->
@@ -47,7 +47,8 @@
               <a href="#acces">Accès</a>
             </div>
 
-            <a class="btn primary" href="tel:0275650132" aria-label="Réserver maintenant par téléphone">
+            <!-- CTA Desktop only (sparisce su mobile) -->
+            <a class="btn primary nav-cta" href="tel:0275650132" aria-label="Réserver maintenant par téléphone">
               📞 Réservez maintenant
             </a>
 
@@ -71,9 +72,10 @@
             <a href="#horaires" class="m-link">Horaires</a>
             <a href="#acces" class="m-link">Accès</a>
           </div>
+
           <div class="actions">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-            <a class="btn ghost" href="#menu">🍝 Voir le menu</a>
+            <a class="btn light" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
           </div>
         </div>
       </div>
@@ -82,14 +84,7 @@
     <!-- HERO -->
     <main class="hero-wrap" aria-label="Présentation">
       <div class="container">
-        <div class="hero">
-          <!-- Infos reali (top chips) -->
-          <div class="hero-topline">
-            <span class="hero-pill">Pl. de Gottefrey 2, 1907 Saxon</span>
-            <span class="hero-pill">Téléphone : <a href="tel:0275650132">027 565 01 32</a></span>
-            <span class="hero-pill">Horaires : <strong>Fermé</strong> · Ouvre à <strong>18:00</strong></span>
-          </div>
-
+        <div class="hero hero-right">
           <h1 class="hero-title">
             Une vraie trattoria italienne,
             <span>comme en Italie.</span>
@@ -102,8 +97,9 @@
 
           <div class="hero-actions">
             <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
-            <a class="btn ghost" href="#menu">Découvrir le menu</a>
-            <a class="btn ghost" href="#acces">Itinéraire</a>
+            <a class="btn light" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+            <a class="btn light" href="#menu">Découvrir le menu</a>
+            <a class="btn light" href="#acces">Itinéraire</a>
           </div>
 
           <div class="hero-note">
@@ -125,45 +121,40 @@
         </p>
       </div>
 
-      <div class="three-col">
+      <div class="two-col">
         <div class="panel">
           <h3>Notre cuisine</h3>
           <p>
             Ici, on mise sur le goût : recettes traditionnelles, ingrédients de saison,
             assiettes généreuses, et une vraie attention aux détails.
           </p>
-          <ul class="checklist">
-            <li>Produits de saison & qualité</li>
-            <li>Recettes italiennes authentiques</li>
-            <li>Ambiance conviviale</li>
-          </ul>
+
+          <div class="inline-actions" style="margin-top:14px;">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn outline" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+          </div>
+
+          <div class="mini-info">
+            Pl. de Gottefrey 2, 1907 Saxon • <a href="tel:0275650132">027 565 01 32</a><br/>
+            Horaires : Fermé · Ouvre à 18:00
+          </div>
         </div>
 
         <div class="panel">
           <h3>Livraison</h3>
           <p>
             Commandez facilement via <strong>Glovo</strong> ou <strong>Uber Eats</strong>.
-            Retrouvez les infos pratiques et contactez-nous si besoin.
+            (Ajoutez ici les liens officiels dès que vous les avez.)
           </p>
-          <div class="inline-actions">
-            <!-- Mets tes liens réels si tu les as -->
-            <a class="btn ghost" href="#" aria-label="Glovo">Glovo</a>
-            <a class="btn ghost" href="#" aria-label="Uber Eats">Uber Eats</a>
-          </div>
-          <div class="mini-info">
-            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br>
-            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
-          </div>
-        </div>
 
-        <div class="panel">
-          <h3>Réservation</h3>
-          <p>
-            Pour garantir le meilleur service, nous privilégions la réservation par téléphone.
-          </p>
-          <div class="inline-actions">
-            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-            <a class="btn ghost" href="#horaires">Voir les horaires</a>
+          <div class="inline-actions" style="margin-top:14px;">
+            <a class="btn outline" href="#" aria-label="Glovo">Glovo</a>
+            <a class="btn outline" href="#" aria-label="Uber Eats">Uber Eats</a>
+          </div>
+
+          <div class="mini-info">
+            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
+            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
           </div>
         </div>
       </div>
@@ -175,13 +166,10 @@
     <div class="container">
       <div class="section-head">
         <h2>Menu</h2>
-        <p>
-          Catégories repliables (propre sur mobile). Chaque plat peut avoir une image à droite.
-        </p>
+        <p>Catégories repliables, plats avec image à droite (mobile: image passe dessous).</p>
       </div>
 
       <div class="accordion">
-        <!-- ANTIPASTI -->
         <details class="acc" open>
           <summary class="acc-summary">
             <span>Antipasti</span>
@@ -205,7 +193,6 @@
           </div>
         </details>
 
-        <!-- PRIMI -->
         <details class="acc">
           <summary class="acc-summary">
             <span>Primi</span>
@@ -242,7 +229,6 @@
           </div>
         </details>
 
-        <!-- SECONDI -->
         <details class="acc">
           <summary class="acc-summary">
             <span>Secondi</span>
@@ -279,7 +265,6 @@
           </div>
         </details>
 
-        <!-- DOLCI -->
         <details class="acc">
           <summary class="acc-summary">
             <span>Dolci</span>
@@ -315,7 +300,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Horaires</h2>
-        <p>Informations actuelles (à compléter si vous souhaitez afficher les horaires par jour).</p>
+        <p>Actuellement : Fermé · Ouvre à 18:00 (ajoutez les horaires complets si vous voulez).</p>
       </div>
 
       <div class="panel">
@@ -347,7 +332,7 @@
     </div>
   </section>
 
-  <!-- FOOTER vero -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-main">
@@ -365,13 +350,14 @@
           <div class="footer-cta">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
           </div>
+          <div style="margin-top:10px;">
+            <a class="btn dark" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+          </div>
         </div>
 
         <div class="footer-block">
           <div class="footer-title">Livraison</div>
-          <div class="footer-text">
-            Disponible sur Glovo & Uber Eats
-          </div>
+          <div class="footer-text">Disponible sur Glovo & Uber Eats</div>
           <div class="footer-links">
             <a href="#">Glovo</a>
             <a href="#">Uber Eats</a>
@@ -380,9 +366,7 @@
 
         <div class="footer-block">
           <div class="footer-title">Horaires</div>
-          <div class="footer-text">
-            Fermé · Ouvre à 18:00
-          </div>
+          <div class="footer-text">Fermé · Ouvre à 18:00</div>
         </div>
       </div>
 
