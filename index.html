@@ -3,33 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#000000" />
   <meta name="description" content="La Trattoria di Chez Ausilia — Cuisine italienne authentique à Saxon. Réservation par téléphone." />
   <title>La Trattoria di Chez Ausilia</title>
 
-  <!-- Fonts premium -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/site.js" defer></script>
-
-  <noscript>
-    <style>
-      .drawer{ display:block !important; }
-      .burger{ display:none !important; }
-    </style>
-  </noscript>
 </head>
 
 <body>
-  <!-- TOP HERO (nav + hero) -->
   <div class="top-hero" id="top">
     <header class="site-header" id="siteHeader">
       <div class="container">
         <div class="bar">
-          <!-- BRAND -->
           <a class="brand" href="#top" aria-label="Aller à l'accueil">
             <img class="brand-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
             <div class="brand-text">
@@ -38,7 +28,6 @@
             </div>
           </a>
 
-          <!-- NAV -->
           <nav class="nav" aria-label="Navigation principale">
             <div class="nav-links" aria-label="Sections">
               <a href="#a-propos">À propos</a>
@@ -47,7 +36,6 @@
               <a href="#acces">Accès</a>
             </div>
 
-            <!-- CTA Desktop only (sparisce su mobile) -->
             <a class="btn primary nav-cta" href="tel:0275650132" aria-label="Réserver maintenant par téléphone">
               📞 Réservez maintenant
             </a>
@@ -64,7 +52,6 @@
           </nav>
         </div>
 
-        <!-- DRAWER MOBILE -->
         <div class="drawer" id="mobile-drawer" aria-label="Menu mobile">
           <div class="stack">
             <a href="#a-propos" class="m-link">À propos</a>
@@ -81,7 +68,6 @@
       </div>
     </header>
 
-    <!-- HERO -->
     <main class="hero-wrap" aria-label="Présentation">
       <div class="container">
         <div class="hero hero-right">
@@ -110,7 +96,6 @@
     </main>
   </div>
 
-  <!-- A PROPOS -->
   <section id="a-propos" class="section">
     <div class="container">
       <div class="section-head">
@@ -129,14 +114,13 @@
             assiettes généreuses, et une vraie attention aux détails.
           </p>
 
-          <div class="inline-actions" style="margin-top:14px;">
+          <div class="inline-actions">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
             <a class="btn outline" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
           </div>
 
           <div class="mini-info">
-            Pl. de Gottefrey 2, 1907 Saxon • <a href="tel:0275650132">027 565 01 32</a><br/>
-            Horaires : Fermé · Ouvre à 18:00
+            Pl. de Gottefrey 2, 1907 Saxon • <a href="tel:0275650132">027 565 01 32</a>
           </div>
         </div>
 
@@ -144,10 +128,10 @@
           <h3>Livraison</h3>
           <p>
             Commandez facilement via <strong>Glovo</strong> ou <strong>Uber Eats</strong>.
-            (Ajoutez ici les liens officiels dès que vous les avez.)
+            (Ajoutez les liens officiels dès que vous les avez.)
           </p>
 
-          <div class="inline-actions" style="margin-top:14px;">
+          <div class="inline-actions">
             <a class="btn outline" href="#" aria-label="Glovo">Glovo</a>
             <a class="btn outline" href="#" aria-label="Uber Eats">Uber Eats</a>
           </div>
@@ -161,12 +145,11 @@
     </div>
   </section>
 
-  <!-- MENU -->
   <section id="menu" class="section">
     <div class="container">
       <div class="section-head">
         <h2>Menu</h2>
-        <p>Catégories repliables, plats avec image à droite (mobile: image passe dessous).</p>
+        <p>Catégories repliables, plats avec image à droite.</p>
       </div>
 
       <div class="accordion">
@@ -248,19 +231,6 @@
                 </div>
                 <img class="dish-img" src="assets/dishes/tagliata.jpg" alt="Tagliata de bœuf" loading="lazy">
               </article>
-
-              <article class="menu-item">
-                <div class="menu-left">
-                  <div class="menu-row">
-                    <h4>Parmigiana</h4>
-                    <div class="dots"></div>
-                    <strong>CHF 24</strong>
-                  </div>
-                  <p>Aubergines, tomate, mozzarella.</p>
-                  <div class="ingredients">Ingrédients: aubergines, tomate, mozzarella, basilic</div>
-                </div>
-                <img class="dish-img" src="assets/dishes/parmigiana.jpg" alt="Parmigiana" loading="lazy">
-              </article>
             </div>
           </div>
         </details>
@@ -295,25 +265,37 @@
     </div>
   </section>
 
-  <!-- HORAIRES -->
   <section id="horaires" class="section">
     <div class="container">
       <div class="section-head">
         <h2>Horaires</h2>
-        <p>Actuellement : Fermé · Ouvre à 18:00 (ajoutez les horaires complets si vous voulez).</p>
+        <p>Horaires d’ouverture (à jour selon vos informations).</p>
       </div>
 
       <div class="panel">
-        <div class="hours-line">
-          <span><strong>Adresse</strong> : Pl. de Gottefrey 2, 1907 Saxon</span>
-          <span><strong>Téléphone</strong> : <a href="tel:0275650132">027 565 01 32</a></span>
-          <span><strong>Statut</strong> : Fermé · Ouvre à 18:00</span>
-        </div>
+        <table class="hours-table" aria-label="Horaires d'ouverture">
+          <tr><td>Jeudi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Vendredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Samedi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Dimanche</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Lundi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Mardi</td><td><strong>Fermé</strong></td></tr>
+          <tr><td>Mercredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+        </table>
+      </div>
+
+      <div class="panel hint" style="margin-top:14px;">
+        <h3>Suggestion (si vous voulez un format “trattoria” classique)</h3>
+        <p>
+          Pour un restaurant italien, une alternative très lisible est :
+          <strong>12:00–14:00</strong> et <strong>18:30–22:30</strong> (soirée un peu plus longue),
+          avec fermeture le <strong>mardi</strong>.
+          Si vous confirmez, je peux remplacer partout sur le site.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ACCES -->
   <section id="acces" class="section">
     <div class="container">
       <div class="section-head">
@@ -332,7 +314,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-main">
@@ -345,8 +326,15 @@
         </div>
 
         <div class="footer-block">
+          <div class="footer-title">Contact</div>
+          <div class="footer-text">
+            <a href="tel:0275650132">027 565 01 32</a><br/>
+            <a href="mailto:info@exemple.ch">info@exemple.ch</a>
+          </div>
+        </div>
+
+        <div class="footer-block">
           <div class="footer-title">Réserver</div>
-          <div class="footer-text">Réservation par téléphone</div>
           <div class="footer-cta">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
           </div>
@@ -357,16 +345,7 @@
 
         <div class="footer-block">
           <div class="footer-title">Livraison</div>
-          <div class="footer-text">Disponible sur Glovo & Uber Eats</div>
-          <div class="footer-links">
-            <a href="#">Glovo</a>
-            <a href="#">Uber Eats</a>
-          </div>
-        </div>
-
-        <div class="footer-block">
-          <div class="footer-title">Horaires</div>
-          <div class="footer-text">Fermé · Ouvre à 18:00</div>
+          <div class="footer-text">Glovo • Uber Eats</div>
         </div>
       </div>
 
