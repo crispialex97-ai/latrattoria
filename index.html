@@ -4,14 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#ffffff" />
-  <meta name="description" content="La Trattoria di Chez Ausilia - Cucina italiana autentica. Prenota il tuo tavolo." />
-
+  <meta name="description" content="La Trattoria di Chez Ausilia - Cucina italiana autentica. Prenotazione telefonica." />
   <title>La Trattoria di Chez Ausilia</title>
 
-  <!-- CSS esterno -->
   <link rel="stylesheet" href="assets/site.css" />
 
-  <!-- Piccolo fix: se JS è disattivo, il menu mobile resta visibile in modo semplice -->
   <noscript>
     <style>
       .drawer{ display:block !important; }
@@ -26,7 +23,13 @@
       <div class="bar">
         <!-- BRAND -->
         <a class="brand" href="#top" aria-label="Vai alla home">
-          <div class="logo" aria-hidden="true"></div>
+          <!-- Logo reale -->
+          <img
+            src="assets/logo.png"
+            alt="Logo La Trattoria di Chez Ausilia"
+            style="width:42px;height:42px;border-radius:14px;object-fit:contain;border:1px solid rgba(0,0,0,.06);background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.06);flex:none;"
+            loading="eager"
+          />
           <div class="title">
             <h1>La Trattoria di Chez Ausilia</h1>
             <span>Cucina italiana • Calore di casa</span>
@@ -43,9 +46,9 @@
             <a href="#dove-siamo">Dove siamo</a>
           </div>
 
-          <a class="btn primary" href="#prenota" aria-label="Vai alla sezione prenotazioni">Prenota</a>
+          <!-- Numero in evidenza (stile ristorante) -->
+          <a class="btn" href="tel:+41000000000" aria-label="Chiama il ristorante">📞 +41 00 000 00 00</a>
 
-          <!-- BURGER (mobile) -->
           <button
             class="burger"
             type="button"
@@ -67,7 +70,6 @@
           <a href="#prenota" class="m-link">Prenota</a>
           <a href="#dove-siamo" class="m-link">Dove siamo</a>
         </div>
-
         <div class="actions">
           <a class="btn" href="tel:+41000000000">📞 Chiama</a>
           <a class="btn primary" href="#prenota">✅ Prenota ora</a>
@@ -77,7 +79,7 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
+    <!-- HERO (stile simile: testo forte + CTA telefono + immagine grande) -->
     <section class="hero" aria-label="Presentazione">
       <div class="container">
         <div class="hero-card">
@@ -85,56 +87,107 @@
             <div class="hero-left">
               <div class="kicker">
                 <span class="flag" aria-hidden="true"></span>
-                Cucina italiana autentica • ingredienti stagionali
+                Cucina calda, generosa e autentica
               </div>
 
-              <h2>Un posto dove si mangia davvero bene. E si sta bene.</h2>
+              <h2>La Trattoria di Chez Ausilia:</h2>
+              <h2 style="margin-top:6px;">Il tuo ristorante italiano “come a casa”.</h2>
 
-              <p>
-                Benvenuti da <strong>La Trattoria di Chez Ausilia</strong>:
-                pasta fatta con cura, ricette italiane sincere, e un’atmosfera calda.
-                Ideale per cene in coppia, famiglie e gruppi.
+              <p style="margin-top:10px;">
+                Un posto dove si mangia bene sul serio: piatti italiani curati, ingredienti di stagione,
+                atmosfera conviviale e servizio attento. Vieni per un pranzo veloce o per una cena speciale.
               </p>
 
               <div class="hero-actions">
-                <a class="btn primary" href="#menu">🍝 Scopri il menù</a>
-                <a class="btn" href="#prenota">📅 Prenota un tavolo</a>
-                <a class="btn" href="#dove-siamo">📍 Come arrivare</a>
+                <!-- CTA “solo telefono” -->
+                <a class="btn primary" href="tel:+41000000000" aria-label="Prenotazione telefonica">
+                  📞 Prenotazione solo per telefono
+                </a>
+                <a class="btn" href="#menu">🍝 Scopri il menù</a>
+              </div>
+
+              <div style="margin-top:14px;color:var(--muted);font-size:13.5px;">
+                ✅ Consigliata la prenotazione nel weekend • 🍷 Vini selezionati • 🍰 Dessert fatti in casa
               </div>
             </div>
 
-            <aside class="hero-right" aria-label="Informazioni e foto">
-              <!-- BLOCCO IMMAGINE: metti una foto in assets/hero.jpg -->
-              <div class="hero-media" aria-label="Immagine del ristorante">
+            <aside class="hero-right" aria-label="Immagine e info">
+              <div class="hero-media">
                 <img
                   src="assets/hero.jpg"
-                  alt="La Trattoria di Chez Ausilia - ambiente e piatti"
-                  loading="lazy" />
+                  alt="Piatto della Trattoria di Chez Ausilia"
+                  loading="eager"
+                />
                 <div class="caption">
-                  Atmosfera italiana, servizio curato, sapori veri.
+                  “Alla casa, come in Italia.” — cucina vera, senza fronzoli.
                 </div>
               </div>
 
               <div class="info-box">
-                <b>Info rapide</b>
+                <b>Contatti rapidi</b>
                 <div class="row">
-                  <div>📍 <span>Indirizzo: <em>Inserisci via, città</em></span></div>
+                  <div>📍 <span>Indirizzo: <em>Inserisci via, CAP, città</em></span></div>
                   <div>📞 <span>Telefono: <em>+41 00 000 00 00</em></span></div>
                   <div>🕒 <span>Oggi: <em>12:00–14:30 • 19:00–22:30</em></span></div>
-                </div>
-              </div>
-
-              <div class="info-box" style="border-left: 6px solid rgba(177,30,47,.20);">
-                <b>Consigli della casa</b>
-                <div class="row">
-                  <div>✅ Weekend: prenotazione consigliata</div>
-                  <div>🍷 Vini italiani selezionati</div>
-                  <div>🍰 Dessert fatti in casa</div>
                 </div>
               </div>
             </aside>
           </div>
         </div>
+
+        <!-- 3 CARTE (come sul sito: Restaurant / Take-away / Eventi) -->
+        <section aria-label="Servizi" style="padding:16px 0 0;">
+          <div class="grid" style="grid-template-columns:repeat(3,1fr);">
+            <article class="card" style="padding:0; overflow:hidden;">
+              <img src="assets/card-1.jpg" alt="Il nostro ristorante" style="height:170px;width:100%;object-fit:cover;" loading="lazy" />
+              <div style="padding:16px;">
+                <h3 style="margin:0 0 6px;font-size:16px;">Il nostro ristorante</h3>
+                <p style="margin:0;color:var(--muted);font-size:13.5px;">
+                  Atmosfera italiana, tavoli accoglienti, perfetto per coppie e famiglie.
+                </p>
+                <div style="margin-top:12px;">
+                  <a class="btn" href="#chi-siamo">En savoir plus</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" style="padding:0; overflow:hidden;">
+              <img src="assets/card-2.jpg" alt="Take-away" style="height:170px;width:100%;object-fit:cover;" loading="lazy" />
+              <div style="padding:16px;">
+                <h3 style="margin:0 0 6px;font-size:16px;">Take-away</h3>
+                <p style="margin:0;color:var(--muted);font-size:13.5px;">
+                  I nostri piatti anche da portare via. Ordina e ritira comodamente.
+                </p>
+                <div style="margin-top:12px;">
+                  <a class="btn" href="tel:+41000000000">Chiama per ordinare</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" style="padding:0; overflow:hidden;">
+              <img src="assets/card-3.jpg" alt="Eventi e cocktails" style="height:170px;width:100%;object-fit:cover;" loading="lazy" />
+              <div style="padding:16px;">
+                <h3 style="margin:0 0 6px;font-size:16px;">Eventi & serate</h3>
+                <p style="margin:0;color:var(--muted);font-size:13.5px;">
+                  Cene di gruppo, compleanni, piccoli eventi: menù su richiesta.
+                </p>
+                <div style="margin-top:12px;">
+                  <a class="btn" href="#prenota">Richiedi info</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Responsive semplice (solo HTML): su mobile va in colonna -->
+          <div aria-hidden="true" style="height:0;">
+            <style>
+              @media (max-width: 980px){
+                section[aria-label="Servizi"] .grid{ grid-template-columns: 1fr !important; }
+              }
+            </style>
+          </div>
+        </section>
+
       </div>
     </section>
 
@@ -144,7 +197,7 @@
         <div class="section-head">
           <div>
             <h3>Chi siamo</h3>
-            <p>Una trattoria italiana semplice, elegante e genuina: qualità, accoglienza, tradizione.</p>
+            <p>Tradizione italiana, ingredienti curati, accoglienza vera. Qui si viene per stare bene.</p>
           </div>
         </div>
 
@@ -152,30 +205,23 @@
           <div class="card">
             <h4 style="margin:0 0 8px; font-size:16px;">La nostra cucina</h4>
             <p style="margin:0; color:var(--muted); font-size:13.5px;">
-              Cuciniamo come in Italia: ingredienti di stagione, sapori equilibrati, porzioni generose.
-              Pochi fronzoli, tanta sostanza.
+              Cuciniamo con semplicità e qualità: piatti “di casa”, sapori equilibrati, porzioni generose.
             </p>
             <ul class="bullets">
-              <li><span class="tick" aria-hidden="true"></span><span><b>Tradizione</b> senza complicazioni.</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span><b>Qualità</b> e cura in ogni piatto.</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span><b>Accoglienza</b> come a casa.</span></li>
+              <li><span class="tick" aria-hidden="true"></span><span><b>Fatto con cura</b> e attenzione ai dettagli.</span></li>
+              <li><span class="tick" aria-hidden="true"></span><span><b>Stagionale</b>: la carta evolve durante l’anno.</span></li>
+              <li><span class="tick" aria-hidden="true"></span><span><b>Accogliente</b>: atmosfera conviviale, alla italiana.</span></li>
             </ul>
           </div>
 
           <div class="card">
-            <h4 style="margin:0 0 8px; font-size:16px;">Eventi & gruppi</h4>
+            <h4 style="margin:0 0 8px; font-size:16px;">Prenotazioni</h4>
             <p style="margin:0; color:var(--muted); font-size:13.5px;">
-              Compleanni, cene di gruppo, piccole occasioni speciali: su richiesta prepariamo un menù dedicato.
+              Preferiamo la prenotazione telefonica per garantire il miglior servizio e gestire i tavoli al meglio.
             </p>
-            <div class="grid" style="margin-top:10px;">
-              <div class="card" style="box-shadow:none; background:var(--bg-soft);">
-                <b style="font-size:13.5px;">🍽️ Degustazione</b>
-                <div style="color:var(--muted); font-size:13px; margin-top:4px;">Percorso completo su prenotazione.</div>
-              </div>
-              <div class="card" style="box-shadow:none; background:var(--bg-soft);">
-                <b style="font-size:13.5px;">🥂 Gruppi</b>
-                <div style="color:var(--muted); font-size:13px; margin-top:4px;">Per 6–20 persone (su richiesta).</div>
-              </div>
+            <div style="margin-top:12px;">
+              <a class="btn primary" href="tel:+41000000000">📞 Prenota ora</a>
+              <a class="btn" href="#dove-siamo" style="margin-left:8px;">📍 Come arrivare</a>
             </div>
           </div>
         </div>
@@ -188,71 +234,46 @@
         <div class="section-head">
           <div>
             <h3>Menù</h3>
-            <p>Qui sotto è un esempio: sostituisci i piatti con quelli reali del tuo ristorante.</p>
+            <p>Esempio: sostituisci con i tuoi piatti reali (nomi, descrizioni, prezzi).</p>
           </div>
         </div>
 
         <div class="grid menu">
           <article class="card menu-item">
             <h4>Antipasto della casa</h4>
-            <p>Selezione di salumi e formaggi, verdure in agrodolce, pane caldo.</p>
-            <div class="price">
-              <span class="tag">Antipasti</span>
-              <strong>CHF 16</strong>
-            </div>
+            <p>Selezione di salumi e formaggi, verdure, pane caldo.</p>
+            <div class="price"><span class="tag">Antipasti</span><strong>CHF 16</strong></div>
           </article>
 
           <article class="card menu-item">
-            <h4>Spaghetti alla Carbonara</h4>
-            <p>Guanciale, pecorino, uova, pepe nero. Cremosa e bilanciata.</p>
-            <div class="price">
-              <span class="tag">Primi</span>
-              <strong>CHF 21</strong>
-            </div>
+            <h4>Carbonara</h4>
+            <p>Guanciale, pecorino, uova, pepe nero.</p>
+            <div class="price"><span class="tag">Primi</span><strong>CHF 21</strong></div>
           </article>
 
           <article class="card menu-item">
             <h4>Risotto ai funghi</h4>
-            <p>Riso mantecato, funghi del giorno, profumo di timo.</p>
-            <div class="price">
-              <span class="tag">Primi</span>
-              <strong>CHF 22</strong>
-            </div>
+            <p>Mantecato, funghi del giorno, profumo di timo.</p>
+            <div class="price"><span class="tag">Primi</span><strong>CHF 22</strong></div>
           </article>
 
           <article class="card menu-item">
             <h4>Tagliata di manzo</h4>
-            <p>Carne tenera, rucola, grana e riduzione delicata.</p>
-            <div class="price">
-              <span class="tag">Secondi</span>
-              <strong>CHF 34</strong>
-            </div>
+            <p>Rucola, grana, riduzione delicata.</p>
+            <div class="price"><span class="tag">Secondi</span><strong>CHF 34</strong></div>
           </article>
 
           <article class="card menu-item">
-            <h4>Parmigiana di melanzane</h4>
-            <p>Melanzane, pomodoro, mozzarella. Un classico di casa.</p>
-            <div class="price">
-              <span class="tag">Secondi</span>
-              <strong>CHF 24</strong>
-            </div>
+            <h4>Parmigiana</h4>
+            <p>Melanzane, pomodoro, mozzarella.</p>
+            <div class="price"><span class="tag">Secondi</span><strong>CHF 24</strong></div>
           </article>
 
           <article class="card menu-item">
-            <h4>Tiramisù della casa</h4>
-            <p>Crema vellutata, cacao amaro, caffè e savoiardi.</p>
-            <div class="price">
-              <span class="tag">Dessert</span>
-              <strong>CHF 12</strong>
-            </div>
+            <h4>Tiramisù</h4>
+            <p>Crema vellutata, cacao, caffè.</p>
+            <div class="price"><span class="tag">Dessert</span><strong>CHF 12</strong></div>
           </article>
-        </div>
-
-        <div class="card" style="margin-top:12px;">
-          <b style="font-size:13.5px;">Allergeni</b>
-          <div style="color:var(--muted); font-size:13px; margin-top:6px;">
-            Su richiesta forniamo informazioni su allergeni e possibili variazioni (dove possibile).
-          </div>
         </div>
       </div>
     </section>
@@ -263,14 +284,13 @@
         <div class="section-head">
           <div>
             <h3>Orari & prenotazioni</h3>
-            <p>Aggiorna orari e contatti reali. Il form è front-end (se vuoi lo collego a email o WhatsApp).</p>
+            <p>Per prenotare: telefono. Per info: telefono o email.</p>
           </div>
         </div>
 
         <div class="grid info">
           <div class="card">
             <h4 style="margin:0 0 6px; font-size:16px;">Orari</h4>
-            <div style="color:var(--muted); font-size:13.5px;">Esempio: modifica in base alla tua attività.</div>
             <table aria-label="Orari di apertura">
               <tr><td>Lunedì</td><td>Chiuso</td></tr>
               <tr><td>Martedì</td><td>12:00–14:30 • 19:00–22:30</td></tr>
@@ -283,59 +303,18 @@
           </div>
 
           <div class="card" id="prenota">
-            <h4 style="margin:0 0 6px; font-size:16px;">Prenota un tavolo</h4>
-            <div style="color:var(--muted); font-size:13.5px;">
-              Compila i dati e conferma telefonicamente (o integriamo un sistema di prenotazione).
+            <h4 style="margin:0 0 6px; font-size:16px;">Prenota (solo telefono)</h4>
+            <p style="margin:0;color:var(--muted);font-size:13.5px;">
+              Per garantire il miglior servizio gestiamo le prenotazioni telefonicamente.
+            </p>
+            <div style="margin-top:12px;">
+              <a class="btn primary" href="tel:+41000000000">📞 Chiama per prenotare</a>
+              <a class="btn" href="mailto:info@esempio.ch" style="margin-left:8px;">✉️ Scrivici</a>
             </div>
 
-            <form action="#" method="post" onsubmit="return false;" aria-label="Modulo prenotazione">
-              <label>
-                Nome e cognome
-                <input type="text" name="name" placeholder="Es. Mario Rossi" autocomplete="name" required />
-              </label>
-
-              <div class="grid" style="grid-template-columns: 1fr 1fr;">
-                <label>
-                  Telefono
-                  <input type="tel" name="phone" placeholder="+41 ..." autocomplete="tel" required />
-                </label>
-                <label>
-                  Persone
-                  <select name="people" required>
-                    <option value="" disabled selected>Seleziona</option>
-                    <option>1</option><option>2</option><option>3</option><option>4</option>
-                    <option>5</option><option>6</option><option>7+</option>
-                  </select>
-                </label>
-              </div>
-
-              <div class="grid" style="grid-template-columns: 1fr 1fr;">
-                <label>
-                  Data
-                  <input type="date" name="date" required />
-                </label>
-                <label>
-                  Ora
-                  <input type="time" name="time" required />
-                </label>
-              </div>
-
-              <label>
-                Note (allergie, richieste, ecc.)
-                <textarea name="notes" placeholder="Es. tavolo tranquillo, allergia alle noci..."></textarea>
-              </label>
-
-              <button class="btn primary" type="submit">Invia richiesta</button>
-
-              <div class="grid" style="grid-template-columns: 1fr 1fr;">
-                <a class="btn" href="tel:+41000000000">📞 Chiama</a>
-                <a class="btn" href="mailto:info@esempio.ch">✉️ Email</a>
-              </div>
-
-              <div style="color:var(--muted); font-size:12.5px;">
-                <b>Nota:</b> cambia telefono/email con quelli reali.
-              </div>
-            </form>
+            <div style="margin-top:12px;color:var(--muted);font-size:12.5px;">
+              <b>Nota:</b> sostituisci telefono/email con quelli reali.
+            </div>
           </div>
         </div>
       </div>
@@ -347,7 +326,7 @@
         <div class="section-head">
           <div>
             <h3>Dove siamo</h3>
-            <p>Sostituisci l’embed con la mappa del tuo indirizzo reale.</p>
+            <p>Inserisci il tuo indirizzo reale nella mappa.</p>
           </div>
         </div>
 
@@ -363,31 +342,81 @@
     </section>
   </main>
 
-  <!-- FOOTER “DA RISTORANTE” -->
+  <!-- FOOTER “A CARTE” + RIEMPIMENTI -->
   <footer>
     <div class="container">
-      <div class="foot">
-        <div>
-          <strong style="color:var(--text);">La Trattoria di Chez Ausilia</strong><br />
-          <span>📍 <em>Inserisci via, CAP, città</em> • 📞 <em>+41 00 000 00 00</em></span><br />
-          <span>✉️ <em>info@esempio.ch</em> • © <span id="year"></span></span>
+      <div class="grid" style="grid-template-columns: 1.2fr 1fr 1fr; gap:12px;">
+        <!-- Card 1: brand + social -->
+        <div class="card">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <img
+              src="assets/logo.png"
+              alt="Logo La Trattoria di Chez Ausilia"
+              style="width:44px;height:44px;border-radius:14px;object-fit:contain;border:1px solid rgba(0,0,0,.06);background:#fff;"
+              loading="lazy"
+            />
+            <div>
+              <div style="font-weight:700;">La Trattoria di Chez Ausilia</div>
+              <div style="color:var(--muted);font-size:13px;">Cucina italiana • Calore di casa</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;color:var(--muted);font-size:13.5px;">
+            Un posto semplice e vero: piatti italiani curati, ingredienti stagionali e accoglienza genuina.
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btn" href="#" aria-label="Facebook">Facebook</a>
+            <a class="btn" href="#" aria-label="Instagram">Instagram</a>
+            <a class="btn" href="#top" aria-label="Torna su">Su</a>
+          </div>
         </div>
 
-        <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <a class="btn" href="#menu">Menù</a>
-          <a class="btn" href="#prenota">Prenota</a>
-          <a class="btn" href="#top">Su</a>
+        <!-- Card 2: contatti -->
+        <div class="card">
+          <div style="font-weight:700;">Contatti</div>
+          <div style="margin-top:10px;color:var(--muted);font-size:13.5px;display:grid;gap:8px;">
+            <div>📍 <b style="color:var(--text);">Indirizzo:</b> <em>Inserisci via, CAP, città</em></div>
+            <div>📞 <b style="color:var(--text);">Telefono:</b> <a href="tel:+41000000000">+41 00 000 00 00</a></div>
+            <div>✉️ <b style="color:var(--text);">Email:</b> <a href="mailto:info@esempio.ch">info@esempio.ch</a></div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="tel:+41000000000">📞 Prenota ora</a>
+          </div>
+        </div>
+
+        <!-- Card 3: orari + legali -->
+        <div class="card">
+          <div style="font-weight:700;">Orari</div>
+          <div style="margin-top:10px;color:var(--muted);font-size:13.5px;display:grid;gap:6px;">
+            <div><b style="color:var(--text);">Lun–Ven:</b> 12:00–14:30 • 19:00–22:30</div>
+            <div><b style="color:var(--text);">Sab:</b> 12:00–15:00 • 19:00–23:00</div>
+            <div><b style="color:var(--text);">Dom:</b> 12:00–15:00</div>
+          </div>
+
+          <div style="margin-top:14px; color:var(--muted); font-size:12.5px;">
+            <a href="#" style="text-decoration:underline;">Privacy</a> •
+            <a href="#" style="text-decoration:underline;">Note legali</a>
+          </div>
         </div>
       </div>
 
-      <div style="margin-top:12px; color:var(--muted); font-size:12.5px;">
-        Seguici:
-        <a href="#" aria-label="Instagram" style="text-decoration:underline;">Instagram</a> •
-        <a href="#" aria-label="Facebook" style="text-decoration:underline;">Facebook</a>
+      <div style="margin-top:12px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:12.5px;">
+        <div>© <span id="year"></span> La Trattoria di Chez Ausilia • Tutti i diritti riservati</div>
+        <div>Realizzato con cura • Prenotazioni: telefono</div>
+      </div>
+
+      <!-- responsive footer cards -->
+      <div aria-hidden="true" style="height:0;">
+        <style>
+          @media (max-width: 980px){
+            footer .grid{ grid-template-columns: 1fr !important; }
+          }
+        </style>
       </div>
     </div>
 
-    <!-- JS esterno -->
     <script src="assets/site.js" defer></script>
   </footer>
 </body>
