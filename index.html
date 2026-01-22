@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="La Trattoria di Chez Ausilia - Cucina italiana autentica, ingredienti stagionali, atmosfera accogliente." />
+  <title>La Trattoria di Chez Ausilia</title>
+
+  <style>
+    :root{
+      --bg: #0f1115;
+      --surface: #141823;
+      --surface-2:#1a2130;
+      --text:#e9eef7;
+      --muted:#a9b3c7;
+      --brand:#d9b36a;
+      --brand-2:#b88b3b;
+      --border: rgba(233,238,247,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 800px at 15% -10%, rgba(217,179,106,.18), transparent 60%),
+        radial-gradient(1000px 700px at 95% 0%, rgba(120,173,255,.12), transparent 55%),
+        linear-gradient(180deg, #0b0d12 0%, var(--bg) 40%, #0b0d12 100%);
+      line-height:1.55;
+      letter-spacing:.2px;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* Layout helpers */
+    .container{
+      width: min(var(--max), calc(100% - 32px));
+      margin-inline:auto;
+    }
+    .grid{
+      display:grid;
+      gap:18px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .pad{ padding: 22px; }
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,13,18,.55);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 240px;
+    }
+    .logo{
+      width:40px;
+      height:40px;
+      border-radius: 14px;
+      background:
+        radial-gradient(12px 12px at 30% 35%, rgba(255,255,255,.22), transparent 55%),
+        linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+      box-shadow: 0 12px 24px rgba(217,179,106,.18);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .brand h1{
+      font-size: 14px;
+      margin:0;
+      letter-spacing:.6px;
+      text-transform: uppercase;
+      line-height:1.2;
+    }
+    .brand span{
+      display:block;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform:none;
+      letter-spacing:.2px;
+      margin-top:2px;
+    }
+
+    nav ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      gap: 18px;
+      align-items:center;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      color: var(--muted);
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: .18s ease;
+    }
+    nav a:hover{
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255,255,255,.03);
+    }
+
+    .cta{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 13px;
+      transition: .18s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+      border-color: rgba(255,255,255,.14);
+      color: #0b0d12;
+      font-weight: 600;
+    }
+    .btn.primary:hover{ filter: brightness(1.03); }
+
+    /* Hero */
+    .hero{
+      padding: 44px 0 26px;
+    }
+    .hero-wrap{
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .hero-left{
+      padding: 28px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(700px 340px at 10% 0%, rgba(217,179,106,.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      position:relative;
+    }
+    .kicker{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .kicker b{ color: var(--text); font-weight: 600; }
+    .hero h2{
+      margin: 14px 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.08;
+      letter-spacing: .2px;
+    }
+    .hero p{
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+    .hero-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .hero-meta{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(217,179,106,.14);
+    }
+
+    .hero-right{
+      display:grid;
+      gap: 18px;
+    }
+    .photo{
+      height: 100%;
+      min-height: 220px;
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(450px 260px at 30% 20%, rgba(255,255,255,.10), transparent 55%),
+        linear-gradient(135deg, rgba(217,179,106,.18) 0%, rgba(26,33,48,.1) 55%, rgba(120,173,255,.12) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    .photo:before{
+      content:"";
+      position:absolute;
+      inset:-40% -30%;
+      background: radial-gradient(circle at 30% 35%, rgba(217,179,106,.25), transparent 50%);
+      transform: rotate(-12deg);
+    }
+    .photo .caption{
+      position:absolute;
+      left: 16px;
+      bottom: 16px;
+      right: 16px;
+      padding: 14px 14px;
+      border-radius: 16px;
+      background: rgba(11,13,18,.55);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+    .caption strong{ display:block; font-size: 13px; }
+    .caption span{ color: var(--muted); font-size: 12px; }
+
+    /* Section */
+    section{ padding: 26px 0; }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .section-head h3{
+      margin:0;
+      font-size: 20px;
+      letter-spacing:.2px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 70ch;
+    }
+
+    /* About */
+    .about{
+      grid-template-columns: 1fr 1fr;
+    }
+    .list{
+      margin: 12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .list li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .check{
+      width: 18px; height: 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(217,179,106,.12);
+      flex: none;
+      margin-top: 2px;
+      position:relative;
+    }
+    .check:after{
+      content:"";
+      position:absolute;
+      left:5px; top:4px;
+      width:6px; height:10px;
+      border-right: 2px solid var(--brand);
+      border-bottom: 2px solid var(--brand);
+      transform: rotate(38deg);
+    }
+
+    /* Menu */
+    .menu{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .menu-item h4{
+      margin: 0 0 6px;
+      font-size: 15px;
+      letter-spacing:.2px;
+    }
+    .menu-item p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .price{
+      margin-top: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      color: var(--text);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .tag{
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.02);
+    }
+
+    /* Info */
+    .info{
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+    .hours table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .hours td{
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .hours td:last-child{
+      text-align:right;
+      color: var(--text);
+    }
+    .contact .row{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .contact small{
+      display:block;
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 12px;
+    }
+
+    form{
+      margin-top: 14px;
+      display:grid;
+      gap: 12px;
+    }
+    label{
+      display:grid;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    input, textarea, select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      outline: none;
+    }
+    input::placeholder, textarea::placeholder{ color: rgba(169,179,199,.7); }
+    textarea{ min-height: 96px; resize: vertical; }
+
+    .map{
+      overflow:hidden;
+    }
+    .map iframe{
+      width:100%;
+      height: 340px;
+      border:0;
+      display:block;
+      filter: saturate(1.05) contrast(1.05);
+    }
+
+    /* Footer */
+    footer{
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .about{ grid-template-columns: 1fr; }
+      .menu{ grid-template-columns: 1fr; }
+      .info{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Home">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>La Trattoria di Chez Ausilia</h1>
+            <span>Cucina italiana • Atmosfera di casa</span>
+          </div>
+        </a>
+
+        <nav aria-label="Navigazione principale">
+          <ul>
+            <li><a href="#chi-siamo">Chi siamo</a></li>
+            <li><a href="#menu">Menù</a></li>
+            <li><a href="#orari">Orari</a></li>
+            <li><a href="#prenota">Prenota</a></li>
+            <li><a href="#dove-siamo">Dove siamo</a></li>
+          </ul>
+        </nav>
+
+        <div class="cta">
+          <a class="btn" href="tel:+41000000000" aria-label="Chiama la trattoria">Chiama</a>
+          <a class="btn primary" href="#prenota">Prenota un tavolo</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-wrap">
+          <div class="hero-inner">
+            <div class="hero-left">
+              <div class="kicker"><b>Oggi</b> ingredienti stagionali • piatti fatti a mano</div>
+              <h2>Tradizione italiana, con il calore di casa.</h2>
+              <p>
+                Benvenuti a <strong>La Trattoria di Chez Ausilia</strong>: una cucina autentica, sapori curati,
+                e un servizio attento. Perfetto per una cena romantica, un pranzo in famiglia o una serata tra amici.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn primary" href="#menu">Scopri il menù</a>
+                <a class="btn" href="#prenota">Prenota ora</a>
+                <a class="btn" href="#dove-siamo">Apri la mappa</a>
+              </div>
+
+              <div class="hero-meta">
+                <div class="pill"><span class="dot" aria-hidden="true"></span> Prenotazioni consigliate nel weekend</div>
+                <div class="pill">🍝 Pasta fresca</div>
+                <div class="pill">🍷 Vini selezionati</div>
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <div class="photo" role="img" aria-label="Foto atmosferica del ristorante (segnaposto)">
+                <div class="caption">
+                  <strong>Esperienza “trattoria” vera</strong>
+                  <span>Ambiente elegante ma informale • servizio rapido</span>
+                </div>
+              </div>
+
+              <div class="card pad">
+                <strong style="display:block; font-size:14px; margin-bottom:6px;">Info rapide</strong>
+                <div style="color:var(--muted); font-size:13px;">
+                  <div>📍 Indirizzo: <em>Inserisci via, città</em></div>
+                  <div>📞 Telefono: <em>+41 00 000 00 00</em></div>
+                  <div>🕒 Oggi: <em>12:00–14:30 • 19:00–22:30</em></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHI SIAMO -->
+    <section id="chi-siamo">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>Chi siamo</h3>
+            <p>Una trattoria moderna: ricette italiane, ingredienti freschi e un’accoglienza che ti fa sentire a casa.</p>
+          </div>
+        </div>
+
+        <div class="grid about">
+          <div class="card pad">
+            <h4 style="margin:0 0 10px; font-size:16px;">La nostra filosofia</h4>
+            <p style="margin:0; color:var(--muted); font-size:13px;">
+              Selezioniamo materie prime di qualità e le trasformiamo con tecniche semplici e rispettose:
+              cotture precise, condimenti equilibrati, porzioni generose.
+            </p>
+            <ul class="list">
+              <li><span class="check" aria-hidden="true"></span><span><b style="color:var(--text)">Cucina autentica</b> ispirata alle tradizioni regionali italiane.</span></li>
+              <li><span class="check" aria-hidden="true"></span><span><b style="color:var(--text)">Stagionalità</b> e aggiornamenti del menù in base ai prodotti del periodo.</span></li>
+              <li><span class="check" aria-hidden="true"></span><span><b style="color:var(--text)">Accoglienza</b> attenta, rapida e professionale.</span></li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <h4 style="margin:0 0 10px; font-size:16px;">Eventi & occasioni</h4>
+            <p style="margin:0; color:var(--muted); font-size:13px;">
+              Organizziamo cene a tema, compleanni e piccoli eventi aziendali. Possibilità di menù personalizzati su richiesta.
+            </p>
+            <div class="grid" style="margin-top:14px; gap:12px;">
+              <div class="card pad" style="background:rgba(255,255,255,.02); box-shadow:none;">
+                <b style="font-size:13px;">🍽️ Menu degustazione</b>
+                <div style="color:var(--muted); font-size:12.5px; margin-top:4px;">Antipasto + primo + secondo + dessert (su prenotazione).</div>
+              </div>
+              <div class="card pad" style="background:rgba(255,255,255,.02); box-shadow:none;">
+                <b style="font-size:13px;">🥂 Gruppi</b>
+                <div style="color:var(--muted); font-size:12.5px; margin-top:4px;">Soluzioni per 6–20 persone, anche con vini abbinati.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>Menù (esempio)</h3>
+            <p>Personalizza nomi, descrizioni e prezzi. Questo è un layout pronto da riempire con i tuoi piatti reali.</p>
+          </div>
+        </div>
+
+        <div class="grid menu">
+          <article class="card pad menu-item">
+            <h4>Antipasto della casa</h4>
+            <p>Selezione di salumi e formaggi, verdure in agrodolce, pane caldo.</p>
+            <div class="price">
+              <span class="tag">Antipasti</span>
+              <strong>CHF 16</strong>
+            </div>
+          </article>
+
+          <article class="card pad menu-item">
+            <h4>Spaghetti alla Carbonara</h4>
+            <p>Guanciale, pecorino, uova, pepe nero. Cremosa e bilanciata.</p>
+            <div class="price">
+              <span class="tag">Primi</span>
+              <strong>CHF 21</strong>
+            </div>
+          </article>
+
+          <article class="card pad menu-item">
+            <h4>Risotto ai funghi</h4>
+            <p>Riso mantecato, funghi del giorno, profumo di timo.</p>
+            <div class="price">
+              <span class="tag">Primi</span>
+              <strong>CHF 22</strong>
+            </div>
+          </article>
+
+          <article class="card pad menu-item">
+            <h4>Tagliata di manzo</h4>
+            <p>Carne tenera, rucola, grana e riduzione delicata.</p>
+            <div class="price">
+              <span class="tag">Secondi</span>
+              <strong>CHF 34</strong>
+            </div>
+          </article>
+
+          <article class="card pad menu-item">
+            <h4>Parmigiana di melanzane</h4>
+            <p>Melanzane, pomodoro, mozzarella. Comfort food italiano.</p>
+            <div class="price">
+              <span class="tag">Secondi</span>
+              <strong>CHF 24</strong>
+            </div>
+          </article>
+
+          <article class="card pad menu-item">
+            <h4>Tiramisù della casa</h4>
+            <p>Crema vellutata, cacao amaro, caffè e savoiardi.</p>
+            <div class="price">
+              <span class="tag">Dessert</span>
+              <strong>CHF 12</strong>
+            </div>
+          </article>
+        </div>
+
+        <div class="card pad" style="margin-top:18px;">
+          <b style="font-size:13px;">Allergeni</b>
+          <div style="color:var(--muted); font-size:12.5px; margin-top:6px;">
+            Su richiesta, forniamo informazioni su allergeni e possibili variazioni (senza glutine / senza lattosio, dove possibile).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORARI + PRENOTA -->
+    <section id="orari">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>Orari & contatti</h3>
+            <p>Aggiorna orari, numero, email e indirizzo. Se vuoi, posso adattare anche per “Glovo/Smood”.</p>
+          </div>
+        </div>
+
+        <div class="grid info">
+          <div class="card pad hours">
+            <h4 style="margin:0 0 6px; font-size:16px;">Orari</h4>
+            <div style="color:var(--muted); font-size:13px;">Esempio: modifica in base alle tue esigenze.</div>
+            <table aria-label="Orari di apertura">
+              <tr><td>Lunedì</td><td>Chiuso</td></tr>
+              <tr><td>Martedì</td><td>12:00–14:30 • 19:00–22:30</td></tr>
+              <tr><td>Mercoledì</td><td>12:00–14:30 • 19:00–22:30</td></tr>
+              <tr><td>Giovedì</td><td>12:00–14:30 • 19:00–22:30</td></tr>
+              <tr><td>Venerdì</td><td>12:00–14:30 • 19:00–23:00</td></tr>
+              <tr><td>Sabato</td><td>12:00–15:00 • 19:00–23:00</td></tr>
+              <tr><td>Domenica</td><td>12:00–15:00</td></tr>
+            </table>
+          </div>
+
+          <div class="card pad contact" id="prenota">
+            <h4 style="margin:0 0 6px; font-size:16px;">Prenota un tavolo</h4>
+            <div style="color:var(--muted); font-size:13px;">
+              Questo form è “front-end”: per ricevere le prenotazioni via email serve un backend (posso darti anche quello).
+            </div>
+
+            <form action="#" method="post" onsubmit="return false;" aria-label="Modulo prenotazione">
+              <label>
+                Nome e cognome
+                <input type="text" name="name" placeholder="Es. Mario Rossi" autocomplete="name" required />
+              </label>
+
+              <div class="grid" style="grid-template-columns: 1fr 1fr; gap:12px;">
+                <label>
+                  Telefono
+                  <input type="tel" name="phone" placeholder="+41 ..." autocomplete="tel" required />
+                </label>
+                <label>
+                  Persone
+                  <select name="people" required>
+                    <option value="" disabled selected>Seleziona</option>
+                    <option>1</option><option>2</option><option>3</option><option>4</option>
+                    <option>5</option><option>6</option><option>7+</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="grid" style="grid-template-columns: 1fr 1fr; gap:12px;">
+                <label>
+                  Data
+                  <input type="date" name="date" required />
+                </label>
+                <label>
+                  Ora
+                  <input type="time" name="time" required />
+                </label>
+              </div>
+
+              <label>
+                Note (allergie, richieste, ecc.)
+                <textarea name="notes" placeholder="Es. tavolo tranquillo, allergia alle noci..."></textarea>
+              </label>
+
+              <button class="btn primary" type="submit">Invia richiesta</button>
+              <small>In alternativa: <a class="btn" href="tel:+41000000000">chiama ora</a></small>
+            </form>
+
+            <div class="row">
+              <a class="btn" href="tel:+41000000000">📞 +41 00 000 00 00</a>
+              <a class="btn" href="mailto:info@esempio.ch">✉️ info@esempio.ch</a>
+            </div>
+            <small>Modifica questi contatti con quelli reali del ristorante.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAPPA -->
+    <section id="dove-siamo">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h3>Dove siamo</h3>
+            <p>Inserisci l’iframe di Google Maps del tuo indirizzo (qui è un placeholder).</p>
+          </div>
+        </div>
+
+        <div class="card map">
+          <!-- Sostituisci src con il tuo embed di Google Maps -->
+          <iframe
+            title="Mappa - La Trattoria di Chez Ausilia"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Geneva&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <strong style="color:var(--text);">La Trattoria di Chez Ausilia</strong><br/>
+          <span>© <span id="year"></span> • Tutti i diritti riservati</span>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="#menu">Menù</a>
+          <a class="btn" href="#prenota">Prenota</a>
+          <a class="btn" href="#top">Torna su</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Piccola utilità: anno automatico
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
