@@ -20,7 +20,6 @@
     setExpanded(open);
   });
 
-  // Close on link click
   document.querySelectorAll(".m-link").forEach((a) => {
     a.addEventListener("click", () => {
       body.classList.remove("nav-open");
@@ -28,7 +27,6 @@
     });
   });
 
-  // Close on ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       body.classList.remove("nav-open");
