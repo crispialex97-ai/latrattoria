@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#ffffff" />
-  <meta name="description" content="La Trattoria di Chez Ausilia — Cuisine italienne authentique. Réservation par téléphone." />
+  <meta name="description" content="La Trattoria di Chez Ausilia — Cuisine italienne authentique à Saxon. Réservation par téléphone." />
   <title>La Trattoria di Chez Ausilia</title>
 
   <link rel="stylesheet" href="assets/site.css" />
+  <script src="assets/site.js" defer></script>
 
   <noscript>
     <style>
@@ -15,523 +16,395 @@
       .burger{ display:none !important; }
     </style>
   </noscript>
-
-  <!-- Petites finitions uniquement pour cette page (sans toucher ton CSS global) -->
-  <style>
-    header{ background:#fff !important; }
-    .bar{ padding: 16px 0 !important; }
-    details > summary { list-style: none; cursor: pointer; }
-    details > summary::-webkit-details-marker { display:none; }
-    .acc-summary{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: var(--shadow);
-      font-weight: 700;
-      font-size: 15px;
-    }
-    .acc-summary span{
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 12.5px;
-    }
-    details[open] .acc-summary{
-      box-shadow: 0 14px 30px rgba(0,0,0,.10);
-      border-color: rgba(177,30,47,.22);
-    }
-    .acc-body{
-      margin-top: 10px;
-      padding: 0 2px 6px;
-    }
-    /* Petites cartes services sous hero: responsive sans casser ton CSS */
-    @media (max-width: 980px){
-      .services-grid{ grid-template-columns: 1fr !important; }
-      footer .footer-grid{ grid-template-columns: 1fr !important; }
-    }
-  </style>
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <div class="bar">
-        <!-- BRAND -->
-        <a class="brand" href="#top" aria-label="Aller à l'accueil">
-          <!-- Logo plus grand -->
-          <img
-            src="assets/logo.png"
-            alt="Logo La Trattoria di Chez Ausilia"
-            style="width:64px;height:64px;border-radius:18px;object-fit:contain;border:1px solid rgba(0,0,0,.08);background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.08);flex:none;"
-            loading="eager"
-          />
-          <div class="title">
-            <h1 style="font-size:14.5px;">La Trattoria di Chez Ausilia</h1>
-            <span style="font-size:12.5px;">Cuisine italienne • Chaleur & convivialité</span>
-          </div>
-        </a>
-
-        <!-- NAV DESKTOP + CTA -->
-        <nav aria-label="Navigation principale">
-          <div class="nav-links" aria-label="Sections">
-            <a href="#a-propos">À propos</a>
-            <a href="#menu">Menu</a>
-            <a href="#horaires">Horaires</a>
-            <a href="#reservation">Réserver</a>
-            <a href="#acces">Accès</a>
-          </div>
-
-          <!-- CTA remplaçant le numéro -->
-          <a class="btn primary" href="tel:+41000000000" aria-label="Réserver par téléphone">
-            📞 Réservez maintenant
+  <!-- TOP (NAV + HERO) con sfondo hero.png -->
+  <div class="top-hero" id="top">
+    <header class="site-header">
+      <div class="container">
+        <div class="bar">
+          <!-- BRAND con logo grande -->
+          <a class="brand" href="#top" aria-label="Aller à l'accueil">
+            <img class="brand-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+            <div class="brand-text">
+              <div class="brand-name">La Trattoria di Chez Ausilia</div>
+              <div class="brand-tagline">Cuisine italienne • Chaleur & convivialité</div>
+            </div>
           </a>
 
-          <button
-            class="burger"
-            type="button"
-            aria-label="Ouvrir le menu"
-            aria-expanded="false"
-            aria-controls="mobile-drawer"
-            id="burger">
-            <span aria-hidden="true"></span>
-          </button>
-        </nav>
+          <!-- NAV -->
+          <nav class="nav" aria-label="Navigation principale">
+            <div class="nav-links" aria-label="Sections">
+              <a href="#a-propos">À propos</a>
+              <a href="#menu">Menu</a>
+              <a href="#horaires">Horaires</a>
+              <a href="#acces">Accès</a>
+            </div>
+
+            <a class="btn primary" href="tel:0275650132" aria-label="Réserver maintenant par téléphone">
+              📞 Réservez maintenant
+            </a>
+
+            <button
+              class="burger"
+              type="button"
+              aria-label="Ouvrir le menu"
+              aria-expanded="false"
+              aria-controls="mobile-drawer"
+              id="burger">
+              <span aria-hidden="true"></span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- DRAWER MOBILE -->
+        <div class="drawer" id="mobile-drawer" aria-label="Menu mobile">
+          <div class="stack">
+            <a href="#a-propos" class="m-link">À propos</a>
+            <a href="#menu" class="m-link">Menu</a>
+            <a href="#horaires" class="m-link">Horaires</a>
+            <a href="#acces" class="m-link">Accès</a>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn" href="#menu">🍝 Voir le menu</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero-wrap" aria-label="Présentation">
+      <div class="container">
+        <div class="hero">
+          <!-- Infos reali sopra -->
+          <div class="hero-topline">
+            <span class="hero-pill">Pl. de Gottefrey 2, 1907 Saxon</span>
+            <span class="hero-pill">Téléphone : <a href="tel:0275650132">027 565 01 32</a></span>
+            <span class="hero-pill">Horaires : <strong>Fermé</strong> · Ouvre à <strong>18:00</strong></span>
+          </div>
+
+          <!-- Messaggio principale -->
+          <h1 class="hero-title">
+            Une vraie trattoria italienne,
+            <span>comme en Italie.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Recettes authentiques, produits soignés et ambiance chaleureuse.
+            Parfait pour un dîner en amoureux, un repas en famille ou une belle table entre amis.
+          </p>
+
+          <!-- CTA -->
+          <div class="hero-actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
+            <a class="btn ghost" href="#menu">Découvrir le menu</a>
+            <a class="btn ghost" href="#acces">Itinéraire</a>
+          </div>
+
+          <!-- Micro trust line -->
+          <div class="hero-note">
+            Réservation conseillée le week-end • Vins italiens sélectionnés • Desserts maison
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- CONTENU -->
+  <section id="a-propos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>À propos</h2>
+        <p>
+          Une cuisine italienne sincère, généreuse, et un accueil à l’italienne :
+          simple, chaleureux, soigné.
+        </p>
       </div>
 
-      <!-- DRAWER MOBILE -->
-      <div class="drawer" id="mobile-drawer" aria-label="Menu mobile">
-        <div class="stack">
-          <a href="#a-propos" class="m-link">À propos</a>
-          <a href="#menu" class="m-link">Menu</a>
-          <a href="#horaires" class="m-link">Horaires</a>
-          <a href="#reservation" class="m-link">Réserver</a>
-          <a href="#acces" class="m-link">Accès</a>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Notre cuisine</h3>
+          <p>
+            Ici, on mise sur le goût : recettes traditionnelles, ingrédients de saison,
+            assiettes généreuses, et une vraie attention aux détails.
+          </p>
+          <ul class="checklist">
+            <li>Produits de saison & qualité</li>
+            <li>Recettes italiennes authentiques</li>
+            <li>Ambiance conviviale</li>
+          </ul>
         </div>
-        <div class="actions">
-          <a class="btn primary" href="tel:+41000000000">📞 Réservez maintenant</a>
-          <a class="btn" href="#menu">🍝 Voir le menu</a>
+
+        <div class="panel">
+          <h3>Réservation</h3>
+          <p>
+            Pour garantir le meilleur service, nous privilégions la réservation par téléphone.
+          </p>
+          <div class="inline-actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn ghost" href="#horaires">Voir les horaires</a>
+          </div>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main id="top">
-    <!-- HERO améliorée -->
-    <section class="hero" aria-label="Présentation">
-      <div class="container">
-        <div class="hero-card">
-          <div class="hero-inner">
-            <div class="hero-left">
-              <div class="kicker">
-                <span class="flag" aria-hidden="true"></span>
-                Saveurs italiennes • Produits de saison • Fait maison
-              </div>
-
-              <h2 style="margin-bottom:6px;">La Trattoria di Chez Ausilia</h2>
-              <h2 style="margin-top:0;">Une vraie trattoria, comme en Italie.</h2>
-
-              <p style="margin-top:10px;">
-                Des recettes authentiques, une cuisine généreuse, et une ambiance chaleureuse.
-                Idéal pour un dîner en amoureux, un repas en famille ou une belle table entre amis.
-              </p>
-
-              <div class="hero-actions">
-                <a class="btn primary" href="tel:+41000000000">📞 Réserver (téléphone)</a>
-                <a class="btn" href="#menu">🍝 Découvrir le menu</a>
-                <a class="btn" href="#acces">📍 Itinéraire</a>
-              </div>
-
-              <div style="margin-top:14px;color:var(--muted);font-size:13.5px;">
-                ✅ Réservation conseillée le week-end • 🍷 Vins italiens sélectionnés • 🍰 Desserts maison
-              </div>
-            </div>
-
-            <aside class="hero-right" aria-label="Photo et infos">
-              <div class="hero-media">
-                <img
-                  src="assets/hero.jpg"
-                  alt="Plat signature — La Trattoria di Chez Ausilia"
-                  loading="eager"
-                />
-                <div class="caption">
-                  Cuisine sincère, sans fioritures. Le goût avant tout.
-                </div>
-              </div>
-
-              <div class="info-box">
-                <b>Infos rapides</b>
-                <div class="row">
-                  <div>📍 <span>Adresse : <em>Ajouter rue, NPA, ville</em></span></div>
-                  <div>📞 <span>Téléphone : <em>+41 00 000 00 00</em></span></div>
-                  <div>🕒 <span>Aujourd’hui : <em>12:00–14:30 • 19:00–22:30</em></span></div>
-                </div>
-              </div>
-            </aside>
-          </div>
-        </div>
-
-        <!-- 3 cartes sous hero -->
-        <section aria-label="Nos services" style="padding:16px 0 0;">
-          <div class="grid services-grid" style="grid-template-columns:repeat(3,1fr);">
-            <article class="card" style="padding:0; overflow:hidden;">
-              <img src="assets/card-1.jpg" alt="Restaurant" style="height:175px;width:100%;object-fit:cover;" loading="lazy" />
-              <div style="padding:16px;">
-                <h3 style="margin:0 0 6px;font-size:16px;">Restaurant</h3>
-                <p style="margin:0;color:var(--muted);font-size:13.5px;">
-                  Une ambiance conviviale, des tables soignées et un service attentionné.
-                </p>
-                <div style="margin-top:12px;">
-                  <a class="btn" href="#a-propos">En savoir plus</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="card" style="padding:0; overflow:hidden;">
-              <img src="assets/card-2.jpg" alt="À emporter" style="height:175px;width:100%;object-fit:cover;" loading="lazy" />
-              <div style="padding:16px;">
-                <h3 style="margin:0 0 6px;font-size:16px;">À emporter</h3>
-                <p style="margin:0;color:var(--muted);font-size:13.5px;">
-                  Vos plats préférés à emporter. Appelez et récupérez à l’heure.
-                </p>
-                <div style="margin-top:12px;">
-                  <a class="btn" href="tel:+41000000000">Commander par téléphone</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="card" style="padding:0; overflow:hidden;">
-              <img src="assets/card-3.jpg" alt="Événements" style="height:175px;width:100%;object-fit:cover;" loading="lazy" />
-              <div style="padding:16px;">
-                <h3 style="margin:0 0 6px;font-size:16px;">Événements</h3>
-                <p style="margin:0;color:var(--muted);font-size:13.5px;">
-                  Anniversaires, groupes, soirées : menus sur demande.
-                </p>
-                <div style="margin-top:12px;">
-                  <a class="btn" href="#reservation">Demander une info</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
+  <!-- MENU con categorie espandibili -->
+  <section id="menu" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Menu</h2>
+        <p>Catégories repliables (propre sur mobile). Remplacez plats & prix avec votre carte réelle.</p>
       </div>
-    </section>
 
-    <!-- A PROPOS -->
-    <section id="a-propos" aria-label="À propos">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>À propos</h3>
-            <p>Tradition italienne, produits de qualité, accueil chaleureux. Ici, on vient pour se faire plaisir.</p>
-          </div>
-        </div>
-
-        <div class="grid about">
-          <div class="card">
-            <h4 style="margin:0 0 8px; font-size:16px;">Notre cuisine</h4>
-            <p style="margin:0; color:var(--muted); font-size:13.5px;">
-              Une cuisine italienne authentique : sauces travaillées, assiettes généreuses, et desserts faits maison.
-            </p>
-            <ul class="bullets">
-              <li><span class="tick" aria-hidden="true"></span><span><b>Authentique</b> et équilibrée.</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span><b>De saison</b>, selon l’arrivage.</span></li>
-              <li><span class="tick" aria-hidden="true"></span><span><b>Conviviale</b>, comme à la maison.</span></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h4 style="margin:0 0 8px; font-size:16px;">Réservation</h4>
-            <p style="margin:0; color:var(--muted); font-size:13.5px;">
-              Pour une meilleure organisation, nous privilégions la réservation par téléphone.
-            </p>
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn primary" href="tel:+41000000000">📞 Réservez maintenant</a>
-              <a class="btn" href="#acces">📍 Accès</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MENU (accordéons propres) -->
-    <section id="menu" aria-label="Menu">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>Menu</h3>
-            <p>Catégories repliables pour une page plus propre (mobile parfait). Remplacez plats & prix.</p>
-          </div>
-        </div>
-
+      <div class="accordion">
         <!-- ANTIPASTI -->
-        <details>
+        <details class="acc" open>
           <summary class="acc-summary">
-            <div>Antipasti</div>
-            <span>Ouvrir / Fermer</span>
+            <span>Antipasti</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
           </summary>
           <div class="acc-body">
-            <div class="grid menu">
-              <article class="card menu-item">
-                <h4>Antipasto della casa</h4>
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Antipasto della casa</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 16</strong>
+                </div>
                 <p>Assortiment de charcuteries & fromages, légumes, pain chaud.</p>
-                <div class="price"><span class="tag">Antipasti</span><strong>CHF 16</strong></div>
               </article>
 
-              <article class="card menu-item">
-                <h4>Bruschetta</h4>
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Bruschetta</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 10</strong>
+                </div>
                 <p>Tomates, basilic, huile d’olive, pain grillé.</p>
-                <div class="price"><span class="tag">Antipasti</span><strong>CHF 10</strong></div>
               </article>
 
-              <article class="card menu-item">
-                <h4>Carpaccio de bœuf</h4>
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Carpaccio de bœuf</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 18</strong>
+                </div>
                 <p>Parmesan, roquette, citron & huile d’olive.</p>
-                <div class="price"><span class="tag">Antipasti</span><strong>CHF 18</strong></div>
               </article>
             </div>
           </div>
         </details>
-
-        <div style="height:12px;"></div>
 
         <!-- PRIMI -->
-        <details>
+        <details class="acc">
           <summary class="acc-summary">
-            <div>Primi</div>
-            <span>Ouvrir / Fermer</span>
+            <span>Primi</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
           </summary>
           <div class="acc-body">
-            <div class="grid menu">
-              <article class="card menu-item">
-                <h4>Spaghetti alla Carbonara</h4>
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Spaghetti alla Carbonara</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 21</strong>
+                </div>
                 <p>Guanciale, pecorino, œufs, poivre noir.</p>
-                <div class="price"><span class="tag">Primi</span><strong>CHF 21</strong></div>
               </article>
 
-              <article class="card menu-item">
-                <h4>Risotto aux champignons</h4>
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Risotto aux champignons</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 22</strong>
+                </div>
                 <p>Crémeux, champignons du jour, parfum de thym.</p>
-                <div class="price"><span class="tag">Primi</span><strong>CHF 22</strong></div>
               </article>
 
-              <article class="card menu-item">
-                <h4>Penne all’arrabbiata</h4>
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Penne all’arrabbiata</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 18</strong>
+                </div>
                 <p>Tomate, piment, ail, basilic.</p>
-                <div class="price"><span class="tag">Primi</span><strong>CHF 18</strong></div>
               </article>
             </div>
           </div>
         </details>
-
-        <div style="height:12px;"></div>
 
         <!-- SECONDI -->
-        <details>
+        <details class="acc">
           <summary class="acc-summary">
-            <div>Secondi</div>
-            <span>Ouvrir / Fermer</span>
+            <span>Secondi</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
           </summary>
           <div class="acc-body">
-            <div class="grid menu">
-              <article class="card menu-item">
-                <h4>Tagliata de bœuf</h4>
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Tagliata de bœuf</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 34</strong>
+                </div>
                 <p>Roquette, parmesan, réduction délicate.</p>
-                <div class="price"><span class="tag">Secondi</span><strong>CHF 34</strong></div>
               </article>
 
-              <article class="card menu-item">
-                <h4>Parmigiana</h4>
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Parmigiana</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 24</strong>
+                </div>
                 <p>Aubergines, tomate, mozzarella.</p>
-                <div class="price"><span class="tag">Secondi</span><strong>CHF 24</strong></div>
               </article>
 
-              <article class="card menu-item">
-                <h4>Escalope milanaise</h4>
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Escalope milanaise</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 28</strong>
+                </div>
                 <p>Panée, citron, salade croquante.</p>
-                <div class="price"><span class="tag">Secondi</span><strong>CHF 28</strong></div>
               </article>
             </div>
           </div>
         </details>
-
-        <div style="height:12px;"></div>
 
         <!-- DOLCI -->
-        <details>
+        <details class="acc">
           <summary class="acc-summary">
-            <div>Dolci</div>
-            <span>Ouvrir / Fermer</span>
+            <span>Dolci</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
           </summary>
           <div class="acc-body">
-            <div class="grid menu">
-              <article class="card menu-item">
-                <h4>Tiramisù maison</h4>
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Tiramisù maison</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 12</strong>
+                </div>
                 <p>Crème légère, cacao, café, biscuits.</p>
-                <div class="price"><span class="tag">Dolci</span><strong>CHF 12</strong></div>
               </article>
 
-              <article class="card menu-item">
-                <h4>Panna cotta</h4>
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Panna cotta</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 11</strong>
+                </div>
                 <p>Vanille, coulis du jour.</p>
-                <div class="price"><span class="tag">Dolci</span><strong>CHF 11</strong></div>
               </article>
 
-              <article class="card menu-item">
-                <h4>Café gourmand</h4>
+              <article class="menu-item">
+                <div class="menu-row">
+                  <h4>Café gourmand</h4>
+                  <div class="dots"></div>
+                  <strong>CHF 13</strong>
+                </div>
                 <p>Un café + mini desserts maison.</p>
-                <div class="price"><span class="tag">Dolci</span><strong>CHF 13</strong></div>
               </article>
             </div>
           </div>
         </details>
 
-        <div class="card" style="margin-top:14px;">
-          <b style="font-size:13.5px;">Allergènes</b>
-          <div style="color:var(--muted); font-size:13px; margin-top:6px;">
-            Sur demande, nous indiquons les allergènes et proposons des adaptations lorsque c’est possible.
-          </div>
+        <div class="fineprint">
+          Allergènes : sur demande, nous indiquons les allergènes et proposons des adaptations lorsque possible.
         </div>
-      </div>
-    </section>
-
-    <!-- HORAIRES + RESERVATION -->
-    <section id="horaires" aria-label="Horaires et réservation">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>Horaires & réservation</h3>
-            <p>Réservation : téléphone. Informations : téléphone ou e-mail.</p>
-          </div>
-        </div>
-
-        <div class="grid info">
-          <div class="card">
-            <h4 style="margin:0 0 6px; font-size:16px;">Horaires</h4>
-            <table aria-label="Horaires d'ouverture">
-              <tr><td>Lundi</td><td>Fermé</td></tr>
-              <tr><td>Mardi</td><td>12:00–14:30 • 19:00–22:30</td></tr>
-              <tr><td>Mercredi</td><td>12:00–14:30 • 19:00–22:30</td></tr>
-              <tr><td>Jeudi</td><td>12:00–14:30 • 19:00–22:30</td></tr>
-              <tr><td>Vendredi</td><td>12:00–14:30 • 19:00–23:00</td></tr>
-              <tr><td>Samedi</td><td>12:00–15:00 • 19:00–23:00</td></tr>
-              <tr><td>Dimanche</td><td>12:00–15:00</td></tr>
-            </table>
-          </div>
-
-          <div class="card" id="reservation">
-            <h4 style="margin:0 0 6px; font-size:16px;">Réserver</h4>
-            <p style="margin:0;color:var(--muted);font-size:13.5px;">
-              Pour un service optimal, nous confirmons les réservations par téléphone.
-            </p>
-            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn primary" href="tel:+41000000000">📞 Réservez maintenant</a>
-              <a class="btn" href="mailto:info@exemple.ch">✉️ Nous écrire</a>
-            </div>
-
-            <div style="margin-top:12px;color:var(--muted);font-size:12.5px;">
-              <b>À personnaliser :</b> remplacez téléphone / e-mail / adresse.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACCES -->
-    <section id="acces" aria-label="Accès">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h3>Accès</h3>
-            <p>Intégrez votre adresse réelle dans la carte.</p>
-          </div>
-        </div>
-
-        <div class="card map">
-          <iframe
-            title="Carte — La Trattoria di Chez Ausilia"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Geneva&output=embed">
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER amélioré (cartes + remplissage) -->
-  <footer>
-    <div class="container">
-      <div class="grid footer-grid" style="grid-template-columns: 1.2fr 1fr 1fr; gap:12px;">
-        <!-- Carte 1 -->
-        <div class="card">
-          <div style="display:flex; align-items:center; gap:10px;">
-            <img
-              src="assets/logo.png"
-              alt="Logo La Trattoria di Chez Ausilia"
-              style="width:54px;height:54px;border-radius:18px;object-fit:contain;border:1px solid rgba(0,0,0,.08);background:#fff;"
-              loading="lazy"
-            />
-            <div>
-              <div style="font-weight:800;">La Trattoria di Chez Ausilia</div>
-              <div style="color:var(--muted);font-size:13px;">Cuisine italienne • Convivialité</div>
-            </div>
-          </div>
-
-          <div style="margin-top:12px;color:var(--muted);font-size:13.5px;">
-            Une vraie trattoria : produits soignés, recettes italiennes, et une ambiance chaleureuse.
-            Réservation conseillée le week-end.
-          </div>
-
-          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
-            <a class="btn" href="#" aria-label="Instagram">Instagram</a>
-            <a class="btn" href="#" aria-label="Facebook">Facebook</a>
-            <a class="btn" href="#top" aria-label="Retour en haut">Haut</a>
-          </div>
-        </div>
-
-        <!-- Carte 2 -->
-        <div class="card">
-          <div style="font-weight:800;">Contact</div>
-          <div style="margin-top:10px;color:var(--muted);font-size:13.5px;display:grid;gap:8px;">
-            <div>📍 <b style="color:var(--text);">Adresse :</b> <em>Rue, NPA, Ville</em></div>
-            <div>📞 <b style="color:var(--text);">Téléphone :</b> <a href="tel:+41000000000">+41 00 000 00 00</a></div>
-            <div>✉️ <b style="color:var(--text);">E-mail :</b> <a href="mailto:info@exemple.ch">info@exemple.ch</a></div>
-          </div>
-
-          <div style="margin-top:12px;">
-            <a class="btn primary" href="tel:+41000000000">📞 Réservez maintenant</a>
-          </div>
-        </div>
-
-        <!-- Carte 3 -->
-        <div class="card">
-          <div style="font-weight:800;">Horaires</div>
-          <div style="margin-top:10px;color:var(--muted);font-size:13.5px;display:grid;gap:6px;">
-            <div><b style="color:var(--text);">Mar–Jeu :</b> 12:00–14:30 • 19:00–22:30</div>
-            <div><b style="color:var(--text);">Ven–Sam :</b> 12:00–14:30 • 19:00–23:00</div>
-            <div><b style="color:var(--text);">Dim :</b> 12:00–15:00</div>
-            <div><b style="color:var(--text);">Lun :</b> Fermé</div>
-          </div>
-
-          <div style="margin-top:14px; color:var(--muted); font-size:12.5px;">
-            <a href="#" style="text-decoration:underline;">Politique de confidentialité</a> •
-            <a href="#" style="text-decoration:underline;">Mentions légales</a>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:12px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:12.5px;">
-        <div>© <span id="year"></span> La Trattoria di Chez Ausilia • Tous droits réservés</div>
-        <div>Réservations : par téléphone</div>
       </div>
     </div>
+  </section>
 
-    <script src="assets/site.js" defer></script>
+  <!-- HORAIRES -->
+  <section id="horaires" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Horaires</h2>
+        <p>Informations pratiques (à adapter si vous voulez le détail par jour).</p>
+      </div>
+
+      <div class="panel">
+        <div class="hours-line">
+          <span><strong>Adresse</strong> : Pl. de Gottefrey 2, 1907 Saxon</span>
+          <span><strong>Téléphone</strong> : <a href="tel:0275650132">027 565 01 32</a></span>
+          <span><strong>Statut</strong> : Fermé · Ouvre à 18:00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCES -->
+  <section id="acces" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Accès</h2>
+        <p>Carte centrée sur Saxon. Si vous me donnez le lien Google Maps exact, je l’intègre proprement.</p>
+      </div>
+
+      <div class="map">
+        <iframe
+          title="Carte — La Trattoria di Chez Ausilia"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER VRAI -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+          <div>
+            <div class="footer-name">La Trattoria di Chez Ausilia</div>
+            <div class="footer-tag">Cuisine italienne • Saxon</div>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Contact</div>
+          <div class="footer-text">
+            Pl. de Gottefrey 2, 1907 Saxon<br />
+            <a href="tel:0275650132">027 565 01 32</a>
+          </div>
+          <div class="footer-cta">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Horaires</div>
+          <div class="footer-text">
+            Fermé · Ouvre à 18:00<br />
+            (Mettez ici vos horaires complets si vous voulez)
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Suivez-nous</div>
+          <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> La Trattoria di Chez Ausilia • Tous droits réservés</div>
+        <div class="footer-legal">
+          <a href="#">Politique de confidentialité</a>
+          <span>•</span>
+          <a href="#">Mentions légales</a>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
