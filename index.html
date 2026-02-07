@@ -17,30 +17,78 @@
 
 <body>
   <div class="top-hero" id="top">
-    <main class="hero-wrap" aria-label="Présentation">
+    <header class="site-header" id="siteHeader">
       <div class="container">
-        <!-- LOGO SOLO, sopra hero (senza nav e senza testi) -->
-        <div class="hero-brand" aria-label="Logo">
-          <a class="hero-brand-link" href="#top" aria-label="Retour en haut de page">
-            <img class="hero-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+        <div class="bar">
+          <a class="brand" href="#top" aria-label="Aller à l'accueil">
+            <!-- SOLO MODIFICA: logo rettangolare -->
+            <img class="brand-logo brand-logo-rect" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+            <div class="brand-text">
+              <div class="brand-name">La Trattoria di Chez Ausilia</div>
+              <div class="brand-tagline">Cuisine italienne • Chaleur & convivialité</div>
+            </div>
           </a>
+
+          <nav class="nav" aria-label="Navigation principale">
+            <div class="nav-links" aria-label="Sections">
+              <a href="#a-propos">À propos</a>
+              <a href="#menu">Menu</a>
+              <a href="#horaires">Horaires</a>
+              <a href="#acces">Accès</a>
+            </div>
+
+            <a class="btn primary nav-cta" href="tel:0275650132" aria-label="Réserver maintenant par téléphone">
+              📞 Réservez maintenant
+            </a>
+
+            <button
+              class="burger"
+              type="button"
+              aria-label="Ouvrir le menu"
+              aria-expanded="false"
+              aria-controls="mobile-drawer"
+              id="burger">
+              <span aria-hidden="true"></span>
+            </button>
+          </nav>
         </div>
 
-        <div class="hero hero-right hero-center-on-mobile">
-          <h1 class="hero-title hero-title-sm">
+        <div class="drawer" id="mobile-drawer" aria-label="Menu mobile">
+          <div class="stack">
+            <a href="#a-propos" class="m-link">À propos</a>
+            <a href="#menu" class="m-link">Menu</a>
+            <a href="#horaires" class="m-link">Horaires</a>
+            <a href="#acces" class="m-link">Accès</a>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn light" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero-wrap" aria-label="Présentation">
+      <div class="container">
+        <div class="hero hero-right">
+          <h1 class="hero-title">
             Une vraie trattoria italienne,
             <span>comme en Italie.</span>
           </h1>
 
-          <br><br>
+          <p class="hero-subtitle">
+            <br><br>
+          </p>
 
-          <div class="hero-actions hero-actions-center-on-mobile">
+          <div class="hero-actions">
             <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
+            <a class="btn light" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
             <a class="btn light" href="#menu">Découvrir le menu</a>
-            <a class="btn light" href="#offres">Offres</a>
+            <a class="btn light" href="#acces">Itinéraire</a>
           </div>
 
-          <div class="hero-note hero-note-center-on-mobile hero-note-clean">
+          <div class="hero-note">
             Vins italiens sélectionnés • Desserts maison
           </div>
         </div>
@@ -48,23 +96,55 @@
     </main>
   </div>
 
-  <!-- OFFRES -->
-  <section id="offres" class="section">
+  <section id="a-propos" class="section">
     <div class="container">
       <div class="section-head">
-        <h2>Offres</h2>
-        <p>Offres & surprises à venir. Ici, vous trouverez nos propositions du moment.</p>
+        <h2>À propos</h2>
+        <p>
+          Une cuisine italienne sincère, généreuse, et un accueil à l’italienne :
+          simple, chaleureux, soigné.
+        </p>
       </div>
 
-      <div class="offers-grid">
-        <div class="panel offer-card">1</div>
-        <div class="panel offer-card">2</div>
-        <div class="panel offer-card">3</div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Notre cuisine</h3>
+          <p>
+            Ici, on mise sur le goût : recettes traditionnelles, ingrédients de saison,
+            assiettes généreuses, et une vraie attention aux détails.
+          </p>
+
+          <div class="inline-actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn outline" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+          </div>
+
+          <div class="mini-info">
+            Pl. de Gottefrey 2, 1907 Saxon • <a href="tel:0275650132">027 565 01 32</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Livraison</h3>
+          <p>
+            Commandez facilement via <strong>Glovo</strong> ou <strong>Uber Eats</strong>.
+            (Ajoutez les liens officiels dès que vous les avez.)
+          </p>
+
+          <div class="inline-actions">
+            <a class="btn outline" href="#" aria-label="Glovo">Glovo</a>
+            <a class="btn outline" href="#" aria-label="Uber Eats">Uber Eats</a>
+          </div>
+
+          <div class="mini-info">
+            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
+            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MENU -->
   <section id="menu" class="section">
     <div class="container">
       <div class="section-head">
@@ -185,7 +265,6 @@
     </div>
   </section>
 
-  <!-- HORAIRES -->
   <section id="horaires" class="section">
     <div class="container">
       <div class="section-head">
@@ -207,57 +286,30 @@
     </div>
   </section>
 
-  <!-- À PROPOS + LIVRAISON + MAP -->
-  <section id="a-propos" class="section">
+  <section id="acces" class="section">
     <div class="container">
       <div class="section-head">
-        <h2>À propos</h2>
-        <p>
-          Chez Ausilia, on vient pour une cuisine italienne vraie : des recettes traditionnelles,
-          des produits choisis avec soin, et une ambiance chaleureuse qui fait du bien.
-          Simple, généreux, authentique — comme en Italie.
-        </p>
+        <h2>Accès</h2>
+        <p>Pl. de Gottefrey 2, 1907 Saxon</p>
       </div>
 
-      <div class="ap-grid">
-        <div class="panel">
-          <h3>Livraison</h3>
-          <p>Commandez facilement via <strong>Uber Eats</strong>.</p>
-
-          <div class="subblock">
-            <h4>Commandez en ligne</h4>
-            <p>Livraison rapide selon disponibilité des plateformes. Ajoutez les liens officiels dès que vous les avez.</p>
-          </div>
-
-          <div class="inline-actions">
-            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-            <a class="btn uber" href="#" aria-label="Uber Eats">Uber Eats</a>
-          </div>
-
-          <div class="mini-info">
-            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
-            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
-          </div>
-        </div>
-
-        <div class="map">
-          <iframe
-            title="Carte — La Trattoria di Chez Ausilia"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
-          </iframe>
-        </div>
+      <div class="map">
+        <iframe
+          title="Carte — La Trattoria di Chez Ausilia"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
+        </iframe>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER (come prima) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <img class="footer-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+          <!-- SOLO MODIFICA: footer logo rettangolare -->
+          <img class="footer-logo footer-logo-rect" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
           <div>
             <div class="footer-name">La Trattoria di Chez Ausilia</div>
             <div class="footer-tag">Pl. de Gottefrey 2, 1907 Saxon • 027 565 01 32</div>
@@ -284,7 +336,7 @@
 
         <div class="footer-block">
           <div class="footer-title">Livraison</div>
-          <div class="footer-text">Uber Eats</div>
+          <div class="footer-text">Glovo • Uber Eats</div>
         </div>
       </div>
 
