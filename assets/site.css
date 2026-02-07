@@ -509,3 +509,61 @@ body.nav-open .drawer{ display:none !important; }
   .brand-logo-sm{ width: 86px; height: 86px; }
   .hero-title-sm{ font-size: clamp(30px, 8vw, 46px); }
 }
+/* Header: brand a sinistra, testi sotto logo */
+.bar-left{ justify-content:flex-start; }
+.brand-stack-left{
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
+}
+
+/* Riduci un po' logo */
+.brand-logo-sm{
+  width: 96px;
+  height: 96px;
+}
+
+/* Testi sotto: un filo più grandi */
+.brand-text-under .brand-name{
+  font-size: 26px;
+}
+.brand-text-under .brand-tagline{
+  font-size: 16px;
+}
+
+/* TOGLI stroke/outline nero (solo dove richiesto) */
+.brand-no-stroke{
+  -webkit-text-stroke: 0 transparent !important;
+  text-shadow:
+    0 0 16px rgba(255,255,255,.38),
+    0 18px 40px rgba(0,0,0,.55) !important;
+}
+
+/* Hero note senza stroke */
+.hero-note-no-stroke{
+  -webkit-text-stroke: 0 transparent !important;
+  text-shadow:
+    0 0 12px rgba(255,255,255,.16),
+    0 18px 44px rgba(0,0,0,.55) !important;
+}
+
+/* Mobile: resta leggibile e allineato bene */
+@media (max-width: 980px){
+  .brand-stack-left{
+    align-items: center;
+    text-align: center;
+  }
+  .bar-left{ justify-content:center; }
+
+  .brand-text-under .brand-name{ font-size: 24px; }
+  .brand-text-under .brand-tagline{ font-size: 15px; }
+
+  .brand-logo-sm{ width: 90px; height: 90px; }
+}
+
+@media (max-width: 720px){
+  .brand-logo-sm{ width: 86px; height: 86px; }
+  .brand-text-under .brand-name{ font-size: 23px; }
+  .brand-text-under .brand-tagline{ font-size: 14.5px; }
+}
