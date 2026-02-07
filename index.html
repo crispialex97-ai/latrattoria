@@ -12,6 +12,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/site.css" />
+  <script>
+  // Se l'utente non ha ancora fatto il caricamento in questa sessione,
+  // mandalo a chargement.html. Evita loop grazie a sessionStorage.
+  (function () {
+    try {
+      const done = sessionStorage.getItem("loaderDone");
+      if (!done) {
+        window.location.replace("chargement.html");
+      }
+    } catch (e) {
+      // se sessionStorage è bloccato, fallback: vai comunque al loader
+      window.location.replace("chargement.html");
+    }
+  })();
+</script>
+
+  
   <script src="assets/site.js" defer></script>
 </head>
 
@@ -361,3 +378,4 @@
   </footer>
 </body>
 </html>
+
