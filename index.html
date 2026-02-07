@@ -75,16 +75,16 @@
             <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
             <a class="btn light" href="#menu">Découvrir le menu</a>
           </div>
-
+         <br>
           <div class="hero-note">
-            Réservation conseillée le week-end • Vins italiens sélectionnés • Desserts maison
+            Vins italiens sélectionnés • Desserts maison
           </div>
         </div>
       </div>
     </main>
   </div>
 
-  <!-- À PROPOS + MAP -->
+  <!-- À PROPOS + (Livraison + Map en 2 colonnes) -->
   <section id="a-propos" class="section">
     <div class="container">
       <div class="section-head">
@@ -96,13 +96,42 @@
         </p>
       </div>
 
-      <div class="map">
-        <iframe
-          title="Carte — La Trattoria di Chez Ausilia"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
-        </iframe>
+      <div class="two-col">
+        <!-- LIVRAISON (déplacée ici) -->
+        <div class="panel">
+          <h3>Livraison</h3>
+          <p>
+            Commandez facilement via <strong>Glovo</strong> ou <strong>Uber Eats</strong>.
+          </p>
+
+          <div style="margin-top:10px;">
+            <h4 style="margin:0 0 6px 0;">Commandez en ligne</h4>
+            <p style="margin:0;">
+              Livraison rapide selon disponibilité des plateformes. Ajoutez les liens officiels dès que vous les avez.
+            </p>
+          </div>
+
+          <div class="inline-actions" style="margin-top:12px;">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn uber" href="#" aria-label="Uber Eats">Uber Eats</a>
+            <a class="btn outline" href="#" aria-label="Glovo">Glovo</a>
+          </div>
+
+          <div class="mini-info" style="margin-top:12px;">
+            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
+            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
+          </div>
+        </div>
+
+        <!-- MAP -->
+        <div class="map">
+          <iframe
+            title="Carte — La Trattoria di Chez Ausilia"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -115,7 +144,7 @@
         <p>Offres & surprises à venir. Ici, vous trouverez nos propositions du moment.</p>
       </div>
 
-      <!-- Se la tua CSS ha .two-col, qui uso una griglia semplice. Se vuoi, la rifiniamo in site.css -->
+      <!-- 3 boxes vides 1/2/3 -->
       <div class="two-col" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
         <div class="panel" style="display:flex;align-items:center;justify-content:center;min-height:120px;font-weight:800;font-size:32px;">1</div>
         <div class="panel" style="display:flex;align-items:center;justify-content:center;min-height:120px;font-weight:800;font-size:32px;">2</div>
@@ -245,33 +274,24 @@
     </div>
   </section>
 
-  <!-- LIVRAISON (seul box) -->
-  <section class="section" id="livraison">
+  <!-- HORAIRES (remis en bas sous le menu) -->
+  <section id="horaires" class="section">
     <div class="container">
       <div class="section-head">
-        <h2>Livraison</h2>
-        <p>Commandez facilement via Glovo ou Uber Eats.</p>
+        <h2>Horaires</h2>
+        <p>Horaires d’ouverture (à jour selon vos informations).</p>
       </div>
 
-      <div class="two-col" style="grid-template-columns: 1fr;">
-        <div class="panel">
-          <h3>Commandez en ligne</h3>
-          <p>
-            Livraison rapide selon disponibilité des plateformes.
-            Ajoutez les liens officiels dès que vous les avez.
-          </p>
-
-          <div class="inline-actions">
-            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-            <a class="btn uber" href="#" aria-label="Uber Eats">Uber Eats</a>
-            <a class="btn outline" href="#" aria-label="Glovo">Glovo</a>
-          </div>
-
-          <div class="mini-info">
-            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
-            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
-          </div>
-        </div>
+      <div class="panel">
+        <table class="hours-table" aria-label="Horaires d'ouverture">
+          <tr><td>Jeudi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Vendredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Samedi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Dimanche</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Lundi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Mardi</td><td><strong>Fermé</strong></td></tr>
+          <tr><td>Mercredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+        </table>
       </div>
     </div>
   </section>
@@ -301,11 +321,6 @@
           <div class="footer-cta">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
           </div>
-        </div>
-
-        <div class="footer-block">
-          <div class="footer-title">Livraison</div>
-          <div class="footer-text">Glovo • Uber Eats</div>
         </div>
       </div>
 
