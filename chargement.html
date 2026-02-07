@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Chargement — La Trattoria di Chez Ausilia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/chargement.css" />
+  <script src="assets/chargement.js" defer></script>
+</head>
+
+<body>
+  <main class="screen" aria-label="Chargement du site">
+    <div class="wrap">
+
+      <!-- LOGO (centrale) -->
+      <div class="logo-area">
+        <img class="logo" src="assets/logo.png" alt="La Trattoria di Chez Ausilia" />
+        <div class="brand">La Trattoria di Chez Ausilia</div>
+      </div>
+
+      <!-- OFFERS (2 box sopra la barra) -->
+      <section class="offers" aria-label="Offres">
+        <div class="offer">
+          <div class="offer-title">Offre du moment</div>
+          <div class="offer-text" contenteditable="true" spellcheck="false">
+            ✨ -10% sur la deuxième pizza (ce soir)
+          </div>
+        </div>
+
+        <div class="offer">
+          <div class="offer-title">Suggestion</div>
+          <div class="offer-text" contenteditable="true" spellcheck="false">
+            🍷 Verre de vin offert pour toute réservation
+          </div>
+        </div>
+      </section>
+
+      <!-- PIZZA LOADING BAR -->
+      <section class="loader" aria-label="Progression">
+        <div class="pizza-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="pizza-fill" id="pizzaFill"></div>
+          <div class="pizza-toppings" aria-hidden="true"></div>
+        </div>
+
+        <div class="progress-row">
+          <div class="progress-label" id="progressLabel">Chargement…</div>
+          <div class="progress-value"><span id="progressValue">0</span>%</div>
+        </div>
+      </section>
+
+      <!-- LOGO "finale" (compare verso la fine) -->
+      <div class="logo-end" id="logoEnd" aria-hidden="true">
+        <img class="logo-end-img" src="assets/logo.png" alt="" />
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
