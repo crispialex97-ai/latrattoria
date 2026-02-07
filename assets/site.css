@@ -477,3 +477,68 @@ a{ color:inherit; text-decoration:none; }
     height: 56px;
   }
 }
+/* =========================================================
+   PATCH SOLO LOGHI (NO STRAVOLGIMENTI)
+   Incolla in fondo a assets/site.css
+========================================================= */
+
+/* Header: assicura allineamento a sinistra */
+.bar.bar-left{
+  justify-content: flex-start !important;
+}
+
+/* Brand: niente “box” intorno al PNG trasparente */
+.brand.brand-left{
+  align-items: flex-start !important;
+}
+
+/* Logo rettangolare sopra hero, proporzionato */
+.brand-logo.brand-logo-rect{
+  width: 280px;          /* PC: proporzionato e leggibile */
+  height: auto;
+  max-width: 62vw;       /* evita gigantismo */
+  object-fit: contain;
+
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  /* stacco elegante su hero */
+  filter: drop-shadow(0 16px 26px rgba(0,0,0,.28));
+}
+
+/* Footer: logo quadrato */
+.footer-logo.footer-logo-square{
+  width: 94px;
+  height: 94px;
+  object-fit: contain;
+
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 24px;   /* come prima */
+  box-shadow: 0 16px 30px rgba(0,0,0,.22); /* come prima */
+}
+
+/* Mobile: logo più piccolo e centrato bene visivamente */
+@media (max-width: 980px){
+  .brand-logo.brand-logo-rect{
+    width: 240px;
+    max-width: 74vw;
+  }
+}
+
+@media (max-width: 720px){
+  .brand-logo.brand-logo-rect{
+    width: 200px;
+    max-width: 78vw;
+    filter: drop-shadow(0 14px 22px rgba(0,0,0,.26));
+  }
+
+  .footer-logo.footer-logo-square{
+    width: 88px;
+    height: 88px;
+  }
+}
