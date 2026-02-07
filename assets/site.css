@@ -422,3 +422,58 @@ a{ color:inherit; text-decoration:none; }
     height: 64px;
   }
 }
+/* =========================================================
+   PATCH SOLO LOGO (rettangolare + trasparente)
+   Incolla in fondo a assets/site.css
+========================================================= */
+
+/* LOGO HEADER: rettangolare, nessun box bianco */
+.brand-logo.brand-logo-rect{
+  width: 300px;      /* rettangolo: più largo che alto */
+  height: 110px;
+  object-fit: contain;
+
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  /* leggero stacco sull'hero senza “cartello” */
+  filter: drop-shadow(0 16px 28px rgba(0,0,0,.28));
+}
+
+/* LOGO FOOTER: rettangolare senza rompere la griglia */
+.footer-logo.footer-logo-rect{
+  width: 170px;
+  height: 64px;
+  object-fit: contain;
+
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  filter: none;
+}
+
+/* Responsive: logo più compatto */
+@media (max-width: 980px){
+  .brand-logo.brand-logo-rect{
+    width: 260px;
+    height: 96px;
+  }
+}
+
+@media (max-width: 720px){
+  .brand-logo.brand-logo-rect{
+    width: 220px;
+    height: 86px;
+    filter: drop-shadow(0 14px 22px rgba(0,0,0,.26));
+  }
+  .footer-logo.footer-logo-rect{
+    width: 150px;
+    height: 56px;
+  }
+}
