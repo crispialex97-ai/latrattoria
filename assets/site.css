@@ -488,3 +488,24 @@ body.nav-open .drawer{ display:none !important; }
   .hero-actions{ gap: 10px; }
   .offers-grid{ grid-template-columns: 1fr; }
 }
+/* Logo un po' più piccolo (senza toccare le regole base) */
+.brand-logo-sm{
+  width: 96px;
+  height: 96px;
+}
+
+/* Testi brand sotto il logo + centrati */
+.brand-text-center{
+  text-align: center;
+}
+
+/* Hero title più piccolo (senza cambiare il resto) */
+.hero-title-sm{
+  font-size: clamp(34px, 5.2vw, 60px);
+}
+
+/* Mobile: brand già centrato e leggibile */
+@media (max-width: 720px){
+  .brand-logo-sm{ width: 86px; height: 86px; }
+  .hero-title-sm{ font-size: clamp(30px, 8vw, 46px); }
+}
