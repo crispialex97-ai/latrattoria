@@ -17,39 +17,30 @@
 
 <body>
   <div class="top-hero" id="top">
-    <header class="site-header" id="siteHeader">
-      <div class="container">
-        <div class="bar">
-          <!-- NAV SOPRA RIMOSSO: resta solo il brand -->
-          <a class="brand" href="#top" aria-label="Aller à l'accueil">
-            <!-- logo rettangolare -->
-            <img class="brand-logo brand-logo-rect" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
-            <div class="brand-text">
-              <div class="brand-name">La Trattoria di Chez Ausilia</div>
-              <div class="brand-tagline">Cuisine italienne • Chaleur & convivialité</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </header>
-
     <main class="hero-wrap" aria-label="Présentation">
       <div class="container">
-        <div class="hero hero-right">
-          <h1 class="hero-title">
+        <!-- LOGO SOLO, sopra hero (senza nav e senza testi) -->
+        <div class="hero-brand" aria-label="Logo">
+          <a class="hero-brand-link" href="#top" aria-label="Retour en haut de page">
+            <img class="hero-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+          </a>
+        </div>
+
+        <div class="hero hero-right hero-center-on-mobile">
+          <h1 class="hero-title hero-title-sm">
             Une vraie trattoria italienne,
             <span>comme en Italie.</span>
           </h1>
 
           <br><br>
 
-          <div class="hero-actions">
+          <div class="hero-actions hero-actions-center-on-mobile">
             <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
             <a class="btn light" href="#menu">Découvrir le menu</a>
             <a class="btn light" href="#offres">Offres</a>
           </div>
 
-          <div class="hero-note hero-note-clean">
+          <div class="hero-note hero-note-center-on-mobile hero-note-clean">
             Vins italiens sélectionnés • Desserts maison
           </div>
         </div>
@@ -261,7 +252,7 @@
     </div>
   </section>
 
-  <!-- FOOTER COMPLETO (come prima) -->
+  <!-- FOOTER (come prima) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-main">
