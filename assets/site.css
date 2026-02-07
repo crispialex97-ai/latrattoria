@@ -42,7 +42,7 @@ a{ color:inherit; text-decoration:none; }
   z-index: 100;
   background: transparent;
   border-bottom: 1px solid rgba(255,255,255,.10);
-  backdrop-filter: none; /* tolto blur */
+  backdrop-filter: none;
 }
 .bar{
   display:flex;
@@ -52,10 +52,6 @@ a{ color:inherit; text-decoration:none; }
   padding: 18px 0;
 }
 
-/* === V2: brand centrato nel nav (senza menu) === */
-.bar-center{ justify-content:center; }
-.brand-center{ flex-direction: column; text-align:center; gap: 10px; }
-
 /* Brand */
 .brand{
   display:flex;
@@ -63,6 +59,17 @@ a{ color:inherit; text-decoration:none; }
   gap: 14px;
   min-width: 0;
 }
+
+/* --- layout richiesto: a sinistra, testi sotto logo --- */
+.bar-left{ justify-content:flex-start; }
+.brand-stack-left{
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
+}
+
+/* Logo base (non usato ora, ma lo lascio per compatibilità) */
 .brand-logo{
   width: 108px;
   height: 108px;
@@ -74,57 +81,46 @@ a{ color:inherit; text-decoration:none; }
   flex: none;
 }
 
-/* allarga un po' il brand */
+/* ✅ LOGO RETTANGOLARE GRANDE */
+.brand-logo-rect{
+  width: 420px;
+  max-width: 90vw;
+  height: auto;
+  object-fit: contain;
+
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  padding: 14px 22px;
+  box-shadow: 0 16px 34px rgba(0,0,0,.22);
+  flex: none;
+}
+
+/* testo sotto logo */
 .brand-text{
   min-width:0;
   max-width: 560px;
 }
+.brand-text-under{ margin-top: 2px; }
 
-/* marcatura NERA sottilissima (dove serve) */
-.brand-name{
-  font-family: var(--font-title);
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 1.05;
-  color:#fff;
-
-  -webkit-text-stroke: .6px rgba(0,0,0,.80);
-
-  text-shadow:
-    -0.6px -0.6px 0 rgba(0,0,0,.35),
-     0.6px -0.6px 0 rgba(0,0,0,.35),
-    -0.6px  0.6px 0 rgba(0,0,0,.35),
-     0.6px  0.6px 0 rgba(0,0,0,.35),
-     0 0 16px rgba(255,255,255,.50),
-     0 18px 40px rgba(0,0,0,.55);
-
-  white-space: nowrap;
-  overflow:hidden;
-  text-overflow: ellipsis;
-}
-
+/* ✅ tagline pulita: NO stroke nero */
 .brand-tagline{
-  margin-top: 4px;
+  margin-top: 0;
   font-weight: 850;
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(255,255,255,.92);
-
-  -webkit-text-stroke: .6px rgba(0,0,0,.80);
-
-  text-shadow:
-    -0.6px -0.6px 0 rgba(0,0,0,.32),
-     0.6px -0.6px 0 rgba(0,0,0,.32),
-    -0.6px  0.6px 0 rgba(0,0,0,.32),
-     0.6px  0.6px 0 rgba(0,0,0,.32),
-     0 0 14px rgba(255,255,255,.38),
-     0 18px 40px rgba(0,0,0,.55);
-
   white-space: nowrap;
   overflow:hidden;
   text-overflow: ellipsis;
 }
+.brand-tagline-clean{
+  -webkit-text-stroke: 0 transparent !important;
+  text-shadow:
+    0 0 14px rgba(255,255,255,.32),
+    0 18px 40px rgba(0,0,0,.55) !important;
+}
 
-/* NAV links (non usati in V2 ma li lascio per non rompere) */
+/* NAV links (non usati, lasciati per compatibilità) */
 .nav{ display:flex; align-items:center; gap: 12px; }
 .nav-links{ display:flex; gap: 6px; align-items:center; }
 .nav-links a{
@@ -179,12 +175,10 @@ a{ color:inherit; text-decoration:none; }
   color:#fff;
   border: 1px solid rgba(255,255,255,.14);
 }
-
-/* Uber Eats */
 .btn.uber { background:#1DB954; color:#fff; border-color:transparent; }
 .btn.uber:hover { filter:brightness(.95); }
 
-/* Burger + Drawer (neutralizzati in V2) */
+/* Burger + Drawer (neutralizzati) */
 .burger{ display:none !important; }
 .drawer{ display:none !important; }
 body.nav-open .drawer{ display:none !important; }
@@ -216,6 +210,11 @@ body.nav-open .drawer{ display:none !important; }
 }
 .hero-title span{ display:block; }
 
+/* titolo hero leggermente più piccolo */
+.hero-title-sm{
+  font-size: clamp(34px, 5.2vw, 60px);
+}
+
 .hero-actions{
   display:flex;
   flex-wrap: wrap;
@@ -224,6 +223,7 @@ body.nav-open .drawer{ display:none !important; }
   margin-top: 18px;
 }
 
+/* ✅ Hero note pulita: NO stroke nero */
 .hero-note{
   margin-top: 14px;
   margin-left: auto;
@@ -231,16 +231,12 @@ body.nav-open .drawer{ display:none !important; }
   font-size: 17.5px;
   color: rgba(255,255,255,.84);
   font-weight: 650;
-
-  -webkit-text-stroke: .6px rgba(0,0,0,.80);
-
+}
+.hero-note-clean{
+  -webkit-text-stroke: 0 transparent !important;
   text-shadow:
-    -0.6px -0.6px 0 rgba(0,0,0,.30),
-     0.6px -0.6px 0 rgba(0,0,0,.30),
-    -0.6px  0.6px 0 rgba(0,0,0,.30),
-     0.6px  0.6px 0 rgba(0,0,0,.30),
-     0 0 12px rgba(255,255,255,.16),
-     0 18px 44px rgba(0,0,0,.55);
+    0 0 12px rgba(255,255,255,.16),
+    0 18px 44px rgba(0,0,0,.55) !important;
 }
 
 /* Sections */
@@ -261,7 +257,6 @@ body.nav-open .drawer{ display:none !important; }
   font-weight: 650;
 }
 
-/* Grids base */
 .two-col{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -281,12 +276,12 @@ body.nav-open .drawer{ display:none !important; }
 .mini-info{ margin-top: 12px; color: var(--muted); font-weight: 650; font-size: 13.5px; }
 .mini-info a{ text-decoration: underline; }
 
-/* V2: subblock in Livraison */
+/* subblock in Livraison */
 .subblock{ margin-top: 12px; }
 .subblock h4{ margin:0 0 6px; font-size: 14px; font-weight: 900; }
 .subblock p{ margin:0; }
 
-/* V2: Offres grid */
+/* Offres grid */
 .offers-grid{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -302,7 +297,7 @@ body.nav-open .drawer{ display:none !important; }
   font-size: 32px;
 }
 
-/* V2: À propos layout */
+/* À propos layout */
 .ap-grid{
   display:grid;
   grid-template-columns: 1fr 1.1fr;
@@ -453,117 +448,24 @@ body.nav-open .drawer{ display:none !important; }
 
 /* Responsive */
 @media (max-width: 980px){
-  /* layout */
   .two-col{ grid-template-columns: 1fr; }
   .ap-grid{ grid-template-columns: 1fr; }
   .offers-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-main{ grid-template-columns: 1fr; }
 
-  /* menu card */
   .menu-item{ flex-direction: column; }
   .dish-img{ width: 100%; height: 180px; }
 
-  /* hero: centro su mobile per leggibilità */
+  /* hero: centro su mobile */
   .hero-center-on-mobile{ text-align:center; margin-left:0; }
   .hero-actions-center-on-mobile{ justify-content:center; }
   .hero-note-center-on-mobile{ margin-left:auto; margin-right:auto; text-align:center; }
 
-  /* brand: evita ellissi su mobile */
-  .brand-name, .brand-tagline{
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-  }
-}
-
-@media (max-width: 720px){
-  .bar{ padding: 14px 0; }
-  .brand-logo{ width: 92px; height: 92px; }
-  .brand-name{ font-size: 22px; }
-  .brand-tagline{ font-size: 14px; }
-  .hero-title{ font-size: clamp(34px, 8.2vw, 54px); }
-
-  /* bottoni comodi da tappare */
-  .btn{ width:100%; }
-  .hero-actions{ gap: 10px; }
-  .offers-grid{ grid-template-columns: 1fr; }
-}
-/* Logo un po' più piccolo (senza toccare le regole base) */
-.brand-logo-sm{
-  width: 96px;
-  height: 96px;
-}
-
-/* Testi brand sotto il logo + centrati */
-.brand-text-center{
-  text-align: center;
-}
-
-/* Hero title più piccolo (senza cambiare il resto) */
-.hero-title-sm{
-  font-size: clamp(34px, 5.2vw, 60px);
-}
-
-/* Mobile: brand già centrato e leggibile */
-@media (max-width: 720px){
-  .brand-logo-sm{ width: 86px; height: 86px; }
-  .hero-title-sm{ font-size: clamp(30px, 8vw, 46px); }
-}
-/* Header: brand a sinistra, testi sotto logo */
-.bar-left{ justify-content:flex-start; }
-.brand-stack-left{
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 10px;
-}
-
-/* Riduci un po' logo */
-.brand-logo-sm{
-  width: 96px;
-  height: 96px;
-}
-
-/* Testi sotto: un filo più grandi */
-.brand-text-under .brand-name{
-  font-size: 26px;
-}
-.brand-text-under .brand-tagline{
-  font-size: 16px;
-}
-
-/* TOGLI stroke/outline nero (solo dove richiesto) */
-.brand-no-stroke{
-  -webkit-text-stroke: 0 transparent !important;
-  text-shadow:
-    0 0 16px rgba(255,255,255,.38),
-    0 18px 40px rgba(0,0,0,.55) !important;
-}
-
-/* Hero note senza stroke */
-.hero-note-no-stroke{
-  -webkit-text-stroke: 0 transparent !important;
-  text-shadow:
-    0 0 12px rgba(255,255,255,.16),
-    0 18px 44px rgba(0,0,0,.55) !important;
-}
-
-/* Mobile: resta leggibile e allineato bene */
-@media (max-width: 980px){
-  .brand-stack-left{
-    align-items: center;
-    text-align: center;
-  }
+  /* brand: su mobile centro per eleganza */
+  .brand-stack-left{ align-items:center; text-align:center; }
   .bar-left{ justify-content:center; }
 
-  .brand-text-under .brand-name{ font-size: 24px; }
-  .brand-text-under .brand-tagline{ font-size: 15px; }
-
-  .brand-logo-sm{ width: 90px; height: 90px; }
-}
-
-@media (max-width: 720px){
-  .brand-logo-sm{ width: 86px; height: 86px; }
-  .brand-text-under .brand-name{ font-size: 23px; }
-  .brand-text-under .brand-tagline{ font-size: 14.5px; }
-}
+  /* logo rect più compatto */
+  .brand-logo-rect{
+    width: 340px;
+    padding: 12px 18
