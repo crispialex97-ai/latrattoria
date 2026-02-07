@@ -576,3 +576,64 @@ body.nav-open .drawer{ display:block; }
   .btn{ width: 100%; }
   .inline-actions{ gap: 8px; }
 }
+/* Piccolo blocco più "pro" dentro il panel Livraison */
+.subblock{ margin-top: 12px; }
+.subblock h4{ margin:0 0 6px; font-size: 14px; font-weight: 900; }
+.subblock p{ margin:0; }
+
+/* Desktop nav only */
+.nav-desktop{ display:flex; }
+
+/* Mobile: niente burger, niente drawer, brand centrato */
+@media (max-width: 980px){
+  /* nascondo proprio il menu desktop se vuoi super clean su mobile */
+  .nav-desktop{ display:none; }
+
+  /* centra brand */
+  .bar{
+    justify-content: center;
+  }
+  .brand{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .brand-logo{
+    width: 96px;
+    height: 96px;
+  }
+  .brand-text{
+    max-width: 520px;
+  }
+  .brand-name{
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 22px;
+  }
+  .brand-tagline{
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 14px;
+  }
+
+  /* hero allineato a sinistra su mobile per leggibilità */
+  .hero-right{ text-align:left; margin-left:0; }
+  .hero-actions{ justify-content:flex-start; }
+
+  /* griglie */
+  .ap-grid{ grid-template-columns: 1fr; }
+  .offers-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* menu card */
+  .menu-item{ flex-direction: column; }
+  .dish-img{ width: 100%; height: 180px; }
+}
+
+/* Mobile stretto */
+@media (max-width: 720px){
+  .offers-grid{ grid-template-columns: 1fr; }
+  .btn{ width: 100%; }
+  .map iframe{ height: 320px; }
+}
