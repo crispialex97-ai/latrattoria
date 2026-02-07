@@ -542,3 +542,96 @@ a{ color:inherit; text-decoration:none; }
     height: 88px;
   }
 }
+/* =========================================================
+   PATCH SOLO LOGHI + LOGO IN HERO (NO STRAVOLGIMENTI)
+   Incolla in fondo a assets/site.css
+========================================================= */
+
+/* 1) Logo dentro HERO, sopra al titolo, allineato a sinistra */
+.hero-logo-row{
+  display:flex;
+  justify-content:flex-start;
+  margin: 0 0 14px; /* spazio prima del titolo */
+}
+
+/* logo hero: proporzionato, pulito, senza box */
+.hero-logo{
+  width: 260px;
+  max-width: 62vw;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  /* effetto “premium” sullo sfondo hero */
+  filter: drop-shadow(0 18px 34px rgba(0,0,0,.35));
+}
+
+/* 2) Header brand: mantieni rettangolare pulito (senza box bianco) */
+.brand-logo.brand-logo-rect{
+  width: 270px;
+  height: auto;
+  max-width: 60vw;
+  object-fit: contain;
+
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  filter: drop-shadow(0 16px 28px rgba(0,0,0,.28));
+}
+
+/* 3) Footer: logo.png ma con “card” bianca via CSS */
+.footer-logo.footer-logo-whitecard{
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+
+  /* questo è lo sfondo bianco richiesto */
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 24px;
+  padding: 10px;
+
+  box-shadow: 0 16px 30px rgba(0,0,0,.22);
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px){
+  .hero-logo{
+    width: 230px;
+    max-width: 72vw;
+  }
+  .brand-logo.brand-logo-rect{
+    width: 240px;
+    max-width: 72vw;
+  }
+}
+
+@media (max-width: 720px){
+  /* su mobile: logo hero leggermente più grande e più leggibile */
+  .hero-logo{
+    width: 220px;
+    max-width: 78vw;
+  }
+
+  .hero-logo-row{
+    margin-bottom: 12px;
+  }
+
+  .brand-logo.brand-logo-rect{
+    width: 210px;
+    max-width: 78vw;
+  }
+
+  .footer-logo.footer-logo-whitecard{
+    width: 92px;
+    height: 92px;
+    padding: 9px;
+  }
+}
