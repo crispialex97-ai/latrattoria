@@ -16,143 +16,308 @@
 </head>
 
 <body>
+  <div class="top-hero" id="top">
+    <header class="site-header" id="siteHeader">
+      <div class="container">
+        <div class="bar">
+          <a class="brand" href="#top" aria-label="Aller à l'accueil">
+            <img class="brand-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+            <div class="brand-text">
+              <div class="brand-name">La Trattoria di Chez Ausilia</div>
+              <div class="brand-tagline">Cuisine italienne • Chaleur & convivialité</div>
+            </div>
+          </a>
 
-<div class="top-hero" id="top">
-  <header class="site-header" id="siteHeader">
-    <div class="container">
-      <div class="bar">
-        <a class="brand" href="#top">
-          <img class="brand-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
-          <div class="brand-text">
-            <div class="brand-name">La Trattoria di Chez Ausilia</div>
-            <div class="brand-tagline">Cuisine italienne • Chaleur & convivialité</div>
+          <nav class="nav" aria-label="Navigation principale">
+            <div class="nav-links" aria-label="Sections">
+              <a href="#a-propos">À propos</a>
+              <a href="#offres">Offres</a>
+              <a href="#menu">Menu</a>
+            </div>
+
+            <button
+              class="burger"
+              type="button"
+              aria-label="Ouvrir le menu"
+              aria-expanded="false"
+              aria-controls="mobile-drawer"
+              id="burger">
+              <span aria-hidden="true"></span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="drawer" id="mobile-drawer" aria-label="Menu mobile">
+          <div class="stack">
+            <a href="#a-propos" class="m-link">À propos</a>
+            <a href="#offres" class="m-link">Offres</a>
+            <a href="#menu" class="m-link">Menu</a>
           </div>
-        </a>
 
-        <nav class="nav">
-          <div class="nav-links">
-            <a href="#a-propos">À propos</a>
-            <a href="#offres">Offres</a>
-            <a href="#menu">Menu</a>
+          <div class="actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
           </div>
-
-          <button class="burger" id="burger" aria-label="Menu">
-            <span></span>
-          </button>
-        </nav>
-      </div>
-
-      <div class="drawer" id="mobile-drawer">
-        <div class="stack">
-          <a href="#a-propos" class="m-link">À propos</a>
-          <a href="#offres" class="m-link">Offres</a>
-          <a href="#menu" class="m-link">Menu</a>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="hero-wrap">
-    <div class="container">
-      <div class="hero hero-right">
-        <h1 class="hero-title">
-          Une vraie trattoria italienne,
-          <span>comme en Italie.</span>
-        </h1>
+    <main class="hero-wrap" aria-label="Présentation">
+      <div class="container">
+        <div class="hero hero-right">
+          <h1 class="hero-title">
+            Une vraie trattoria italienne,
+            <span>comme en Italie.</span>
+          </h1>
 
-        <br><br>
+          <br><br>
 
-        <div class="hero-actions">
-          <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
-          <a class="btn light" href="#menu">Découvrir le menu</a>
+          <div class="hero-actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
+            <a class="btn light" href="#menu">Découvrir le menu</a>
+          </div>
+
+          <div class="hero-note">
+            Réservation conseillée le week-end • Vins italiens sélectionnés • Desserts maison
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-</div>
-
-<!-- À PROPOS -->
-<section id="a-propos" class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>À propos</h2>
-      <p>
-        Chez Ausilia, la cuisine italienne se vit avec simplicité et sincérité.
-        Des recettes traditionnelles, des produits choisis avec soin et une ambiance
-        chaleureuse qui rappelle l’Italie d’origine : généreuse, conviviale, authentique.
-      </p>
-    </div>
-
-    <div class="map">
-      <iframe
-        title="Carte — La Trattoria di Chez Ausilia"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
-      </iframe>
-    </div>
+    </main>
   </div>
-</section>
 
-<!-- OFFRES -->
-<section id="offres" class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Offres</h2>
-      <p>Découvrez prochainement nos offres spéciales.</p>
-    </div>
-
-    <div class="three-col">
-      <div class="panel offer-box">1</div>
-      <div class="panel offer-box">2</div>
-      <div class="panel offer-box">3</div>
-    </div>
-  </div>
-</section>
-
-<!-- MENU -->
-<section id="menu" class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Menu</h2>
-    </div>
-
-    <!-- CONTENUTO MENU INVARIATO -->
-  </div>
-</section>
-
-<!-- LIVRAISON -->
-<section class="section">
-  <div class="container">
-    <div class="two-col">
-      <div class="panel">
-        <h3>Livraison</h3>
+  <!-- À PROPOS + MAP -->
+  <section id="a-propos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>À propos</h2>
         <p>
-          Commandez facilement via Glovo ou Uber Eats.
+          Chez Ausilia, on vient pour une cuisine italienne vraie : des recettes traditionnelles,
+          des produits choisis avec soin, et une ambiance chaleureuse qui fait du bien.
+          Simple, généreux, authentique — comme en Italie.
         </p>
+      </div>
 
-        <div class="inline-actions">
-          <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-          <a class="btn uber" href="#">Uber Eats</a>
-        </div>
+      <div class="map">
+        <iframe
+          title="Carte — La Trattoria di Chez Ausilia"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </section>
 
-        <div class="mini-info">
-          Adresse : Pl. de Gottefrey 2, 1907 Saxon<br>
-          Téléphone : 027 565 01 32
+  <!-- OFFRES -->
+  <section id="offres" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Offres</h2>
+        <p>Offres & surprises à venir. Ici, vous trouverez nos propositions du moment.</p>
+      </div>
+
+      <!-- Se la tua CSS ha .two-col, qui uso una griglia semplice. Se vuoi, la rifiniamo in site.css -->
+      <div class="two-col" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <div class="panel" style="display:flex;align-items:center;justify-content:center;min-height:120px;font-weight:800;font-size:32px;">1</div>
+        <div class="panel" style="display:flex;align-items:center;justify-content:center;min-height:120px;font-weight:800;font-size:32px;">2</div>
+        <div class="panel" style="display:flex;align-items:center;justify-content:center;min-height:120px;font-weight:800;font-size:32px;">3</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Menu</h2>
+        <p>Catégories repliables, plats avec image à droite.</p>
+      </div>
+
+      <div class="accordion">
+        <details class="acc" open>
+          <summary class="acc-summary">
+            <span>Antipasti</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
+          </summary>
+          <div class="acc-body">
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Antipasto della casa</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 16</strong>
+                  </div>
+                  <p>Assortiment de charcuteries & fromages, légumes, pain chaud.</p>
+                  <div class="ingredients">Ingrédients: charcuterie, fromages, légumes, huile d’olive</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/antipasto.jpg" alt="Antipasto della casa" loading="lazy">
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary class="acc-summary">
+            <span>Primi</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
+          </summary>
+          <div class="acc-body">
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Spaghetti alla Carbonara</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 21</strong>
+                  </div>
+                  <p>Guanciale, pecorino, œufs, poivre noir.</p>
+                  <div class="ingredients">Ingrédients: spaghetti, guanciale, pecorino, œufs, poivre</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/carbonara.jpg" alt="Spaghetti alla Carbonara" loading="lazy">
+              </article>
+
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Risotto aux champignons</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 22</strong>
+                  </div>
+                  <p>Crémeux, champignons du jour, parfum de thym.</p>
+                  <div class="ingredients">Ingrédients: riz, champignons, parmesan, thym</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/risotto.jpg" alt="Risotto aux champignons" loading="lazy">
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary class="acc-summary">
+            <span>Secondi</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
+          </summary>
+          <div class="acc-body">
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Tagliata de bœuf</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 34</strong>
+                  </div>
+                  <p>Roquette, parmesan, réduction délicate.</p>
+                  <div class="ingredients">Ingrédients: bœuf, roquette, parmesan, huile d’olive</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/tagliata.jpg" alt="Tagliata de bœuf" loading="lazy">
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary class="acc-summary">
+            <span>Dolci</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
+          </summary>
+          <div class="acc-body">
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Tiramisù maison</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 12</strong>
+                  </div>
+                  <p>Crème légère, cacao, café, biscuits.</p>
+                  <div class="ingredients">Ingrédients: mascarpone, café, cacao, biscuits</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/tiramisu.jpg" alt="Tiramisù maison" loading="lazy">
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <div class="fineprint">
+          Allergènes : sur demande, nous indiquons les allergènes et proposons des adaptations lorsque possible.
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-bottom">
-      © <span id="year"></span> La Trattoria di Chez Ausilia
+  <!-- LIVRAISON (seul box) -->
+  <section class="section" id="livraison">
+    <div class="container">
+      <div class="section-head">
+        <h2>Livraison</h2>
+        <p>Commandez facilement via Glovo ou Uber Eats.</p>
+      </div>
+
+      <div class="two-col" style="grid-template-columns: 1fr;">
+        <div class="panel">
+          <h3>Commandez en ligne</h3>
+          <p>
+            Livraison rapide selon disponibilité des plateformes.
+            Ajoutez les liens officiels dès que vous les avez.
+          </p>
+
+          <div class="inline-actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn uber" href="#" aria-label="Uber Eats">Uber Eats</a>
+            <a class="btn outline" href="#" aria-label="Glovo">Glovo</a>
+          </div>
+
+          <div class="mini-info">
+            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
+            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+          <div>
+            <div class="footer-name">La Trattoria di Chez Ausilia</div>
+            <div class="footer-tag">Pl. de Gottefrey 2, 1907 Saxon • 027 565 01 32</div>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Contact</div>
+          <div class="footer-text">
+            <a href="tel:0275650132">027 565 01 32</a><br/>
+            <a href="mailto:info@exemple.ch">info@exemple.ch</a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Réserver</div>
+          <div class="footer-cta">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Livraison</div>
+          <div class="footer-text">Glovo • Uber Eats</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> La Trattoria di Chez Ausilia • Tous droits réservés</div>
+        <div class="footer-legal">
+          <a href="#">Politique de confidentialité</a>
+          <span>•</span>
+          <a href="#">Mentions légales</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
