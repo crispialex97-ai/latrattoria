@@ -28,35 +28,15 @@
             </div>
           </a>
 
-          <nav class="nav" aria-label="Navigation principale">
+          <!-- NAV desktop only (niente mobile menu) -->
+          <nav class="nav nav-desktop" aria-label="Navigation principale">
             <div class="nav-links" aria-label="Sections">
-              <a href="#a-propos">À propos</a>
               <a href="#offres">Offres</a>
               <a href="#menu">Menu</a>
+              <a href="#horaires">Horaires</a>
+              <a href="#a-propos">À propos</a>
             </div>
-
-            <button
-              class="burger"
-              type="button"
-              aria-label="Ouvrir le menu"
-              aria-expanded="false"
-              aria-controls="mobile-drawer"
-              id="burger">
-              <span aria-hidden="true"></span>
-            </button>
           </nav>
-        </div>
-
-        <div class="drawer" id="mobile-drawer" aria-label="Menu mobile">
-          <div class="stack">
-            <a href="#a-propos" class="m-link">À propos</a>
-            <a href="#offres" class="m-link">Offres</a>
-            <a href="#menu" class="m-link">Menu</a>
-          </div>
-
-          <div class="actions">
-            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-          </div>
         </div>
       </div>
     </header>
@@ -74,67 +54,16 @@
           <div class="hero-actions">
             <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
             <a class="btn light" href="#menu">Découvrir le menu</a>
+            <a class="btn light" href="#offres">Offres</a>
           </div>
-         <br>
+
           <div class="hero-note">
-            Vins italiens sélectionnés • Desserts maison
+            Réservation conseillée le week-end • Vins italiens sélectionnés • Desserts maison
           </div>
         </div>
       </div>
     </main>
   </div>
-
-  <!-- À PROPOS + (Livraison + Map en 2 colonnes) -->
-  <section id="a-propos" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>À propos</h2>
-        <p>
-          Chez Ausilia, on vient pour une cuisine italienne vraie : des recettes traditionnelles,
-          des produits choisis avec soin, et une ambiance chaleureuse qui fait du bien.
-          Simple, généreux, authentique — comme en Italie.
-        </p>
-      </div>
-
-      <div class="two-col">
-        <!-- LIVRAISON (déplacée ici) -->
-        <div class="panel">
-          <h3>Livraison</h3>
-          <p>
-            Commandez facilement via <strong>Glovo</strong> ou <strong>Uber Eats</strong>.
-          </p>
-
-          <div style="margin-top:10px;">
-            <h4 style="margin:0 0 6px 0;">Commandez en ligne</h4>
-            <p style="margin:0;">
-              Livraison rapide selon disponibilité des plateformes. Ajoutez les liens officiels dès que vous les avez.
-            </p>
-          </div>
-
-          <div class="inline-actions" style="margin-top:12px;">
-            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-            <a class="btn uber" href="#" aria-label="Uber Eats">Uber Eats</a>
-            <a class="btn outline" href="#" aria-label="Glovo">Glovo</a>
-          </div>
-
-          <div class="mini-info" style="margin-top:12px;">
-            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
-            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
-          </div>
-        </div>
-
-        <!-- MAP -->
-        <div class="map">
-          <iframe
-            title="Carte — La Trattoria di Chez Ausilia"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- OFFRES -->
   <section id="offres" class="section">
@@ -144,11 +73,10 @@
         <p>Offres & surprises à venir. Ici, vous trouverez nos propositions du moment.</p>
       </div>
 
-      <!-- 3 boxes vides 1/2/3 -->
-      <div class="two-col" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
-        <div class="panel" style="display:flex;align-items:center;justify-content:center;min-height:120px;font-weight:800;font-size:32px;">1</div>
-        <div class="panel" style="display:flex;align-items:center;justify-content:center;min-height:120px;font-weight:800;font-size:32px;">2</div>
-        <div class="panel" style="display:flex;align-items:center;justify-content:center;min-height:120px;font-weight:800;font-size:32px;">3</div>
+      <div class="offers-grid">
+        <div class="panel offer-card">1</div>
+        <div class="panel offer-card">2</div>
+        <div class="panel offer-card">3</div>
       </div>
     </div>
   </section>
@@ -274,7 +202,7 @@
     </div>
   </section>
 
-  <!-- HORAIRES (remis en bas sous le menu) -->
+  <!-- HORAIRES -->
   <section id="horaires" class="section">
     <div class="container">
       <div class="section-head">
@@ -292,6 +220,51 @@
           <tr><td>Mardi</td><td><strong>Fermé</strong></td></tr>
           <tr><td>Mercredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- À PROPOS + LIVRAISON + MAP (spostato sotto Horaires) -->
+  <section id="a-propos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>À propos</h2>
+        <p>
+          Chez Ausilia, on vient pour une cuisine italienne vraie : des recettes traditionnelles,
+          des produits choisis avec soin, et une ambiance chaleureuse qui fait du bien.
+          Simple, généreux, authentique — comme en Italie.
+        </p>
+      </div>
+
+      <div class="ap-grid">
+        <div class="panel">
+          <h3>Livraison</h3>
+          <p>Commandez facilement via <strong>Glovo</strong> ou <strong>Uber Eats</strong>.</p>
+
+          <div class="subblock">
+            <h4>Commandez en ligne</h4>
+            <p>Livraison rapide selon disponibilité des plateformes. Ajoutez les liens officiels dès que vous les avez.</p>
+          </div>
+
+          <div class="inline-actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn uber" href="#" aria-label="Uber Eats">Uber Eats</a>
+          </div>
+
+          <div class="mini-info">
+            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
+            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
+          </div>
+        </div>
+
+        <div class="map">
+          <iframe
+            title="Carte — La Trattoria di Chez Ausilia"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
