@@ -1,233 +1,363 @@
-:root{
-  --brand:#b11e2f;
-  --text:#111;
-  --muted:#5d5d5d;
-  --radius:18px;
-  --max:1180px;
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="La Trattoria di Chez Ausilia — Cuisine italienne authentique à Saxon. Réservation par téléphone." />
+  <title>La Trattoria di Chez Ausilia</title>
 
-  --font-body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  --font-title:"Playfair Display", Georgia, serif;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
 
-/* RESET */
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
-body{
-  margin:0;
-  font-family:var(--font-body);
-  background:#fff;
-  color:var(--text);
-  line-height:1.6;
-}
-a{ color:inherit; text-decoration:none; }
-.container{
-  width:min(var(--max), calc(100% - 32px));
-  margin-inline:auto;
-}
+  <link rel="stylesheet" href="assets/site.css" />
+  <script src="assets/site.js" defer></script>
+</head>
 
-/* ================= HERO ================= */
-.top-hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.16), rgba(0,0,0,.12)),
-    url("hero.png") center / cover no-repeat;
-}
+<body>
+  <div class="top-hero" id="top">
+    <header class="site-header" id="siteHeader">
+      <div class="container">
+        <div class="bar">
+          <a class="brand" href="#top" aria-label="Aller à l'accueil">
+            <img class="brand-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+            <div class="brand-text">
+              <div class="brand-name">La Trattoria di Chez Ausilia</div>
+              <div class="brand-tagline">Cuisine italienne • Chaleur & convivialité</div>
+            </div>
+          </a>
 
-/* ================= NAV ================= */
-/* NAV COMPLETAMENTE TRASPARENTE, SENZA BLUR, FERMA SOPRA L’IMMAGINE */
-.site-header{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:100;
-  background:transparent;
-  border:none;
-}
-.bar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  padding:20px 0;
-}
+          <nav class="nav" aria-label="Navigation principale">
+            <div class="nav-links" aria-label="Sections">
+              <a href="#a-propos">À propos</a>
+              <a href="#menu">Menu</a>
+              <a href="#horaires">Horaires</a>
+              <a href="#acces">Accès</a>
+            </div>
 
-/* Brand */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  min-width:0;
-}
-.brand-logo{
-  width:108px;
-  height:108px;
-  object-fit:contain;
-  background:#fff;
-  border-radius:26px;
-  box-shadow:0 16px 34px rgba(0,0,0,.25);
-  flex-shrink:0;
-}
-.brand-text{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-}
+            <a class="btn primary nav-cta" href="tel:0275650132" aria-label="Réserver maintenant par téléphone">
+              📞 Réservez maintenant
+            </a>
 
-/* MARCATURA 1px */
-.brand-name{
-  font-family:var(--font-title);
-  font-size:24px;
-  font-weight:900;
-  line-height:1.15;
-  color:#fff;
-  -webkit-text-stroke:1px rgba(0,0,0,.85);
-  text-shadow:
-    -1px -1px 0 rgba(0,0,0,.45),
-     1px -1px 0 rgba(0,0,0,.45),
-    -1px  1px 0 rgba(0,0,0,.45),
-     1px  1px 0 rgba(0,0,0,.45),
-     0 0 14px rgba(255,255,255,.35),
-     0 18px 40px rgba(0,0,0,.6);
-}
+            <button
+              class="burger"
+              type="button"
+              aria-label="Ouvrir le menu"
+              aria-expanded="false"
+              aria-controls="mobile-drawer"
+              id="burger">
+              <span aria-hidden="true"></span>
+            </button>
+          </nav>
+        </div>
 
-.brand-tagline{
-  font-size:15px;
-  font-weight:700;
-  color:#fff;
-  -webkit-text-stroke:1px rgba(0,0,0,.85);
-  text-shadow:
-    -1px -1px 0 rgba(0,0,0,.45),
-     1px -1px 0 rgba(0,0,0,.45),
-    -1px  1px 0 rgba(0,0,0,.45),
-     1px  1px 0 rgba(0,0,0,.45),
-     0 0 12px rgba(255,255,255,.3),
-     0 18px 40px rgba(0,0,0,.6);
-}
+        <div class="drawer" id="mobile-drawer" aria-label="Menu mobile">
+          <div class="stack">
+            <a href="#a-propos" class="m-link">À propos</a>
+            <a href="#menu" class="m-link">Menu</a>
+            <a href="#horaires" class="m-link">Horaires</a>
+            <a href="#acces" class="m-link">Accès</a>
+          </div>
 
-/* Nav links */
-.nav{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.nav-links{
-  display:flex;
-  gap:8px;
-}
-.nav-links a{
-  padding:10px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,.12);
-  color:#fff;
-  font-weight:800;
-  font-size:14px;
-  white-space:nowrap;
-}
-.nav-links a:hover{
-  background:rgba(255,255,255,.22);
-}
+          <div class="actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn light" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-/* ================= BUTTON ================= */
-.btn{
-  padding:12px 18px;
-  border-radius:999px;
-  font-weight:900;
-  cursor:pointer;
-  border:none;
-  white-space:nowrap;
-}
-.btn.primary{
-  background:var(--brand);
-  color:#fff;
-}
+    <main class="hero-wrap" aria-label="Présentation">
+      <div class="container">
+        <div class="hero hero-right">
+          <h1 class="hero-title">
+            Une vraie trattoria italienne,
+            <span>comme en Italie.</span>
+          </h1>
 
-/* ================= HERO CONTENT ================= */
-.hero-wrap{
-  flex:1;
-  display:flex;
-  align-items:flex-end;
-  padding:92px 0 88px; /* spazio extra per nav */
-}
-.hero{
-  width:min(900px,100%);
-  margin-left:auto;
-  text-align:right;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
+          <p class="hero-subtitle">
+            Recettes authentiques, produits soignés et ambiance chaleureuse à Saxon.
+            Réservation rapide par téléphone.
+          </p>
 
-/* Titolo (NO stroke) */
-.hero-title{
-  font-family:var(--font-title);
-  font-size:clamp(40px, 5.5vw, 72px);
-  font-weight:900;
-  line-height:1.08;
-  color:#fff;
-  margin:0;
-  text-shadow:
-    0 0 16px rgba(255,255,255,.4),
-    0 18px 44px rgba(0,0,0,.65);
-}
-.hero-title span{ display:block; }
+          <div class="hero-actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
+            <a class="btn light" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+            <a class="btn light" href="#menu">Découvrir le menu</a>
+            <a class="btn light" href="#acces">Itinéraire</a>
+          </div>
 
-/* Sottotitolo — STROKE 1px */
-.hero-subtitle{
-  max-width:85ch;
-  margin-left:auto;
-  font-size:21px;
-  font-weight:600;
-  line-height:1.5;
-  color:#fff;
-  -webkit-text-stroke:1px rgba(0,0,0,.85);
-  text-shadow:
-    -1px -1px 0 rgba(0,0,0,.45),
-     1px -1px 0 rgba(0,0,0,.45),
-    -1px  1px 0 rgba(0,0,0,.45),
-     1px  1px 0 rgba(0,0,0,.45),
-     0 0 14px rgba(255,255,255,.25),
-     0 18px 44px rgba(0,0,0,.65);
-}
+          <div class="hero-note">
+            Réservation conseillée le week-end • Vins italiens sélectionnés • Desserts maison
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 
-/* Bottoni */
-.hero-actions{
-  display:flex;
-  justify-content:flex-end;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:6px;
-}
+  <section id="a-propos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>À propos</h2>
+        <p>
+          Une cuisine italienne sincère, généreuse, et un accueil à l’italienne :
+          simple, chaleureux, soigné.
+        </p>
+      </div>
 
-/* Nota — STROKE 1px */
-.hero-note{
-  max-width:90ch;
-  margin-left:auto;
-  font-size:17px;
-  font-weight:600;
-  line-height:1.5;
-  color:#fff;
-  -webkit-text-stroke:1px rgba(0,0,0,.85);
-  text-shadow:
-    -1px -1px 0 rgba(0,0,0,.45),
-     1px -1px 0 rgba(0,0,0,.45),
-    -1px  1px 0 rgba(0,0,0,.45),
-     1px  1px 0 rgba(0,0,0,.45),
-     0 0 12px rgba(255,255,255,.25),
-     0 18px 44px rgba(0,0,0,.65);
-}
+      <div class="two-col">
+        <div class="panel">
+          <h3>Notre cuisine</h3>
+          <p>
+            Ici, on mise sur le goût : recettes traditionnelles, ingrédients de saison,
+            assiettes généreuses, et une vraie attention aux détails.
+          </p>
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:980px){
-  .nav-links{ display:none; }
-}
-@media(max-width:720px){
-  .brand-logo{ width:92px; height:92px; }
-  .brand-name{ font-size:22px; }
-  .hero-wrap{ padding:84px 0 72px; }
-  .hero-title{ font-size:clamp(34px, 8vw, 52px); }
-  .hero-subtitle{ font-size:18px; }
-  .hero-note{ font-size:15.5px; }
-}
+          <div class="inline-actions">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+            <a class="btn outline" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+          </div>
+
+          <div class="mini-info">
+            Pl. de Gottefrey 2, 1907 Saxon • <a href="tel:0275650132">027 565 01 32</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Livraison</h3>
+          <p>
+            Commandez facilement via <strong>Glovo</strong> ou <strong>Uber Eats</strong>.
+            (Ajoutez les liens officiels dès que vous les avez.)
+          </p>
+
+          <div class="inline-actions">
+            <a class="btn outline" href="#" aria-label="Glovo">Glovo</a>
+            <a class="btn outline" href="#" aria-label="Uber Eats">Uber Eats</a>
+          </div>
+
+          <div class="mini-info">
+            Adresse : Pl. de Gottefrey 2, 1907 Saxon<br/>
+            Téléphone : <a href="tel:0275650132">027 565 01 32</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Menu</h2>
+        <p>Catégories repliables, plats avec image à droite.</p>
+      </div>
+
+      <div class="accordion">
+        <details class="acc" open>
+          <summary class="acc-summary">
+            <span>Antipasti</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
+          </summary>
+          <div class="acc-body">
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Antipasto della casa</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 16</strong>
+                  </div>
+                  <p>Assortiment de charcuteries & fromages, légumes, pain chaud.</p>
+                  <div class="ingredients">Ingrédients: charcuterie, fromages, légumes, huile d’olive</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/antipasto.jpg" alt="Antipasto della casa" loading="lazy">
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary class="acc-summary">
+            <span>Primi</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
+          </summary>
+          <div class="acc-body">
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Spaghetti alla Carbonara</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 21</strong>
+                  </div>
+                  <p>Guanciale, pecorino, œufs, poivre noir.</p>
+                  <div class="ingredients">Ingrédients: spaghetti, guanciale, pecorino, œufs, poivre</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/carbonara.jpg" alt="Spaghetti alla Carbonara" loading="lazy">
+              </article>
+
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Risotto aux champignons</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 22</strong>
+                  </div>
+                  <p>Crémeux, champignons du jour, parfum de thym.</p>
+                  <div class="ingredients">Ingrédients: riz, champignons, parmesan, thym</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/risotto.jpg" alt="Risotto aux champignons" loading="lazy">
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary class="acc-summary">
+            <span>Secondi</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
+          </summary>
+          <div class="acc-body">
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Tagliata de bœuf</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 34</strong>
+                  </div>
+                  <p>Roquette, parmesan, réduction délicate.</p>
+                  <div class="ingredients">Ingrédients: bœuf, roquette, parmesan, huile d’olive</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/tagliata.jpg" alt="Tagliata de bœuf" loading="lazy">
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary class="acc-summary">
+            <span>Dolci</span>
+            <span class="acc-hint">Ouvrir / Fermer</span>
+          </summary>
+          <div class="acc-body">
+            <div class="menu-grid">
+              <article class="menu-item">
+                <div class="menu-left">
+                  <div class="menu-row">
+                    <h4>Tiramisù maison</h4>
+                    <div class="dots"></div>
+                    <strong>CHF 12</strong>
+                  </div>
+                  <p>Crème légère, cacao, café, biscuits.</p>
+                  <div class="ingredients">Ingrédients: mascarpone, café, cacao, biscuits</div>
+                </div>
+                <img class="dish-img" src="assets/dishes/tiramisu.jpg" alt="Tiramisù maison" loading="lazy">
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <div class="fineprint">
+          Allergènes : sur demande, nous indiquons les allergènes et proposons des adaptations lorsque possible.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="horaires" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Horaires</h2>
+        <p>Horaires d’ouverture (à jour selon vos informations).</p>
+      </div>
+
+      <div class="panel">
+        <table class="hours-table" aria-label="Horaires d'ouverture">
+          <tr><td>Jeudi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Vendredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Samedi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Dimanche</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Lundi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tr><td>Mardi</td><td><strong>Fermé</strong></td></tr>
+          <tr><td>Mercredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+        </table>
+      </div>
+
+      <div class="panel hint" style="margin-top:14px;">
+        <h3>Suggestion (si vous voulez un format “trattoria” classique)</h3>
+        <p>
+          Pour un restaurant italien, une alternative très lisible est :
+          <strong>12:00–14:00</strong> et <strong>18:30–22:30</strong> (soirée un peu plus longue),
+          avec fermeture le <strong>mardi</strong>.
+          Si vous confirmez, je peux remplacer partout sur le site.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="acces" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Accès</h2>
+        <p>Pl. de Gottefrey 2, 1907 Saxon</p>
+      </div>
+
+      <div class="map">
+        <iframe
+          title="Carte — La Trattoria di Chez Ausilia"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img class="footer-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+          <div>
+            <div class="footer-name">La Trattoria di Chez Ausilia</div>
+            <div class="footer-tag">Pl. de Gottefrey 2, 1907 Saxon • 027 565 01 32</div>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Contact</div>
+          <div class="footer-text">
+            <a href="tel:0275650132">027 565 01 32</a><br/>
+            <a href="mailto:info@exemple.ch">info@exemple.ch</a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Réserver</div>
+          <div class="footer-cta">
+            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
+          </div>
+          <div style="margin-top:10px;">
+            <a class="btn dark" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <div class="footer-title">Livraison</div>
+          <div class="footer-text">Glovo • Uber Eats</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> La Trattoria di Chez Ausilia • Tous droits réservés</div>
+        <div class="footer-legal">
+          <a href="#">Politique de confidentialité</a>
+          <span>•</span>
+          <a href="#">Mentions légales</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
