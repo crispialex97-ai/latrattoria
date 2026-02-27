@@ -743,3 +743,55 @@ a{ color:inherit; text-decoration:none; }
   position: relative !important;
   z-index: 1 !important;
 }
+/* =========================
+   LOGO PIÙ GRANDE
+   ========================= */
+
+.brand-logo.brand-logo-rect{
+  height: 300px !important;   /* circa il doppio rispetto alla versione precedente */
+  width: auto !important;
+  transform: translateY(-20px) !important; /* resta leggermente alzato */
+  max-width: none !important;
+}
+
+
+/* =========================
+   RIMUOVE QUALSIASI BOX HERO
+   ========================= */
+
+.hero-right::before{
+  display:none !important;
+}
+
+.hero,
+.hero-right,
+.hero-box,
+.hero-card,
+.hero-panel{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+
+/* =========================
+   PILL PREMIUM
+   ========================= */
+
+.trust{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.pill{
+  background: rgba(0,0,0,0.60);
+  color:white;
+  padding:10px 16px;
+  border-radius:30px;
+  font-weight:600;
+  font-size:14px;
+  backdrop-filter: blur(3px);
+}
