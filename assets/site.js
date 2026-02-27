@@ -117,3 +117,9 @@
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
 })();
+// Disattiva qualsiasi shrink del nav/logo
+(() => {
+  const header = document.getElementById("siteHeader");
+  if (!header) return;
+  header.classList.remove("is-scrolled");
+})();
