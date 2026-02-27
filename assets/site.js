@@ -81,3 +81,23 @@
     });
   }
 })();
+// NAV visibile solo sopra l'hero: quando superi l'hero, sparisce
+(() => {
+  const header = document.getElementById("siteHeader");
+  const hero = document.getElementById("top"); // .top-hero ha id="top"
+
+  if (!header || !hero) return;
+
+  const update = () => {
+    // altezza "utile" dell'hero (quando la superi -> nascondi header)
+    const heroBottom = hero.offsetTop + hero.offsetHeight;
+    const threshold = heroBottom - header.offsetHeight - 10; // -10 = margine
+
+    if (window.scrollY > threshold) header.classList.add("nav-hidden");
+    else header.classList.remove("nav-hidden");
+  };
+
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+})();
