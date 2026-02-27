@@ -658,3 +658,88 @@ a{ color:inherit; text-decoration:none; }
 
 /* 8) Mantieni bottoni e pill “puliti” senza pannello dietro
    (non li centro se già stanno bene: ma se vuoi anche loro centrati, dimmelo) */
+/* =========================
+   HERO BAND + NAV HIDE ON SCROLL
+   Incolla in fondo al site.css
+   ========================= */
+
+/* HEADER: sempre in alto quando sei sull'hero */
+.site-header{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+
+  transition: transform .25s ease, opacity .2s ease !important;
+}
+
+/* quando scrolli oltre l'hero -> lo nascondiamo */
+.site-header.nav-hidden{
+  transform: translateY(-120%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* spazio top per compensare header fixed (regola se serve) */
+.top-hero{
+  padding-top: 120px !important;
+}
+
+/* LOGO: 2.5x più grande + alzato di ~20px */
+.brand-logo.brand-logo-rect{
+  height: 150px !important;         /* <-- 2.5x circa (se era ~60px). Se vuoi ancora: 165/180 */
+  width: auto !important;
+  display: block !important;
+
+  /* alzalo di 20px */
+  transform: translateY(-20px) !important;
+
+  max-width: none !important;
+}
+
+/* centra il logo nel bar */
+.site-header .bar{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* HERO: crea un "band" nero 60% che va edge-to-edge
+   e copre ESATTAMENTE l'altezza del blocco testo */
+.hero-right{
+  position: relative !important;
+  z-index: 0 !important;
+
+  /* un po' di padding così il band respira */
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
+/* band dietro, da sinistra a destra dello schermo */
+.hero-right::before{
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  /* 100% della viewport, centrato rispetto al container */
+  width: 100vw !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  background: rgba(0,0,0,0.60) !important;
+  z-index: -1 !important;
+  border-radius: 0 !important;
+}
+
+/* assicura che tutto il testo stia sopra */
+.hero-right > *{
+  position: relative !important;
+  z-index: 1 !important;
+}
