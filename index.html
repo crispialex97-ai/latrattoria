@@ -3,16 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="La Trattoria di Chez Ausilia — Cuisine italienne authentique à Saxon. Réservation par téléphone." />
-  <title>La Trattoria di Chez Ausilia</title>
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index,follow" />
 
+  <title>La Trattoria di Chez Ausilia — Cuisine italienne authentique à Saxon</title>
+  <meta name="description" content="La Trattoria di Chez Ausilia à Saxon — cuisine italienne authentique, vins italiens, desserts maison. Réservation par téléphone au 027 565 01 32." />
+
+  <!-- (Opzionale) Canonical: sostituisci con dominio reale -->
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
 
+  <!-- CSS/JS -->
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/site.js" defer></script>
+
+  <!-- (Opzionale) OG/Twitter: aggiorna URL+immagine quando hai dominio -->
+  <meta property="og:site_name" content="La Trattoria di Chez Ausilia" />
+  <meta property="og:title" content="La Trattoria di Chez Ausilia — Trattoria italienne à Saxon" />
+  <meta property="og:description" content="Cuisine italienne authentique • Vins italiens • Desserts maison. Réservez au 027 565 01 32." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/assets/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD (base) — puoi aggiornare lat/lng quando vuoi -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Restaurant",
+    "name":"La Trattoria di Chez Ausilia",
+    "description":"Cuisine italienne authentique à Saxon. Vins italiens sélectionnés et desserts maison.",
+    "servesCuisine":["Italian"],
+    "priceRange":"$$",
+    "telephone":"+41 27 565 01 32",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Pl. de Gottefrey 2",
+      "postalCode":"1907",
+      "addressLocality":"Saxon",
+      "addressCountry":"CH"
+    },
+    "openingHoursSpecification":[
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"14:00" },
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"18:00","closes":"22:00" },
+
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"10:00","closes":"14:00" },
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"18:00","closes":"22:00" },
+
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00" },
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"18:00","closes":"22:00" },
+
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"14:00" },
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"18:00","closes":"22:00" },
+
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"10:00","closes":"14:00" },
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"18:00","closes":"22:00" },
+
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"10:00","closes":"14:00" },
+      { "@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"18:00","closes":"22:00" }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -22,7 +77,7 @@
         <div class="bar">
           <!-- Header: SOLO LOGO -->
           <a class="brand" href="#top" aria-label="Aller à l'accueil">
-            <img class="brand-logo brand-logo-rect" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+            <img class="brand-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
           </a>
         </div>
       </div>
@@ -30,21 +85,19 @@
 
     <main class="hero-wrap" aria-label="Présentation">
       <div class="container">
-        <div class="hero hero-right">
+        <div class="hero">
           <h1 class="hero-title">
             Une vraie trattoria italienne,
             <span>comme en Italie.</span>
           </h1>
 
-          <br><br>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
+          <div class="hero-actions" aria-label="Actions principales">
+            <a class="btn primary" href="tel:0275650132" aria-label="Réserver par téléphone au 027 565 01 32">📞 Réserver par téléphone</a>
             <a class="btn light" href="#menu">Découvrir le menu</a>
             <a class="btn light" href="#offres">Offres</a>
           </div>
 
-          <div class="hero-note hero-note-clean">
+          <div class="hero-note-clean" aria-label="Points forts">
             Vins italiens sélectionnés • Desserts maison
           </div>
         </div>
@@ -53,30 +106,30 @@
   </div>
 
   <!-- OFFRES -->
-  <section id="offres" class="section">
+  <section id="offres" class="section" aria-label="Offres">
     <div class="container">
       <div class="section-head">
         <h2>Offres</h2>
         <p>Offres & surprises à venir. Ici, vous trouverez nos propositions du moment.</p>
       </div>
 
-      <div class="offers-grid">
-        <div class="panel offer-card">1</div>
-        <div class="panel offer-card">2</div>
-        <div class="panel offer-card">3</div>
+      <div class="offers-grid" aria-label="Liste des offres">
+        <div class="panel offer-card" role="article" aria-label="Offre 1">Offre 1</div>
+        <div class="panel offer-card" role="article" aria-label="Offre 2">Offre 2</div>
+        <div class="panel offer-card" role="article" aria-label="Offre 3">Offre 3</div>
       </div>
     </div>
   </section>
 
   <!-- MENU -->
-  <section id="menu" class="section">
+  <section id="menu" class="section" aria-label="Menu">
     <div class="container">
       <div class="section-head">
         <h2>Menu</h2>
         <p>Catégories repliables, plats avec image à droite.</p>
       </div>
 
-      <div class="accordion">
+      <div class="accordion" aria-label="Menu par catégories">
         <details class="acc" open>
           <summary class="acc-summary">
             <span>Antipasti</span>
@@ -88,7 +141,7 @@
                 <div class="menu-left">
                   <div class="menu-row">
                     <h4>Antipasto della casa</h4>
-                    <div class="dots"></div>
+                    <div class="dots" aria-hidden="true"></div>
                     <strong>CHF 16</strong>
                   </div>
                   <p>Assortiment de charcuteries & fromages, légumes, pain chaud.</p>
@@ -111,7 +164,7 @@
                 <div class="menu-left">
                   <div class="menu-row">
                     <h4>Spaghetti alla Carbonara</h4>
-                    <div class="dots"></div>
+                    <div class="dots" aria-hidden="true"></div>
                     <strong>CHF 21</strong>
                   </div>
                   <p>Guanciale, pecorino, œufs, poivre noir.</p>
@@ -124,7 +177,7 @@
                 <div class="menu-left">
                   <div class="menu-row">
                     <h4>Risotto aux champignons</h4>
-                    <div class="dots"></div>
+                    <div class="dots" aria-hidden="true"></div>
                     <strong>CHF 22</strong>
                   </div>
                   <p>Crémeux, champignons du jour, parfum de thym.</p>
@@ -147,7 +200,7 @@
                 <div class="menu-left">
                   <div class="menu-row">
                     <h4>Tagliata de bœuf</h4>
-                    <div class="dots"></div>
+                    <div class="dots" aria-hidden="true"></div>
                     <strong>CHF 34</strong>
                   </div>
                   <p>Roquette, parmesan, réduction délicate.</p>
@@ -170,7 +223,7 @@
                 <div class="menu-left">
                   <div class="menu-row">
                     <h4>Tiramisù maison</h4>
-                    <div class="dots"></div>
+                    <div class="dots" aria-hidden="true"></div>
                     <strong>CHF 12</strong>
                   </div>
                   <p>Crème légère, cacao, café, biscuits.</p>
@@ -190,29 +243,31 @@
   </section>
 
   <!-- HORAIRES -->
-  <section id="horaires" class="section">
+  <section id="horaires" class="section" aria-label="Horaires">
     <div class="container">
       <div class="section-head">
         <h2>Horaires</h2>
         <p>Horaires d’ouverture (à jour selon vos informations).</p>
       </div>
 
-      <div class="panel">
+      <div class="panel" role="region" aria-label="Table des horaires">
         <table class="hours-table" aria-label="Horaires d'ouverture">
-          <tr><td>Jeudi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
-          <tr><td>Vendredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
-          <tr><td>Samedi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
-          <tr><td>Dimanche</td><td>10:00–14:00 • 18:00–22:00</td></tr>
-          <tr><td>Lundi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
-          <tr><td>Mardi</td><td><strong>Fermé</strong></td></tr>
-          <tr><td>Mercredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          <tbody>
+            <tr><td>Jeudi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+            <tr><td>Vendredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+            <tr><td>Samedi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+            <tr><td>Dimanche</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+            <tr><td>Lundi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+            <tr><td>Mardi</td><td><strong>Fermé</strong></td></tr>
+            <tr><td>Mercredi</td><td>10:00–14:00 • 18:00–22:00</td></tr>
+          </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- À PROPOS + LIVRAISON + MAP (stesso rigo) -->
-  <section id="a-propos" class="section">
+  <!-- À PROPOS + LIVRAISON + MAP -->
+  <section id="a-propos" class="section" aria-label="À propos">
     <div class="container">
       <div class="section-head">
         <h2>À propos</h2>
@@ -224,19 +279,22 @@
       </div>
 
       <div class="ap-grid">
-        <!-- Tab 1: Livraison -->
-        <div class="panel">
-          <h3>Livraison</h3>
-          <p>Commandez facilement via <strong>Uber Eats</strong>.</p>
+        <!-- Livraison -->
+        <div class="panel" style="padding:16px;">
+          <h3 style="margin:0; font-family:var(--font-title); font-size:22px;">Livraison</h3>
+          <p style="margin:8px 0 0; color:rgba(0,0,0,.68);">Commandez facilement via <strong>Uber Eats</strong>.</p>
 
           <div class="subblock">
-            <h4>Commandez en ligne</h4>
-            <p>Livraison rapide selon disponibilité des plateformes. Ajoutez les liens officiels dès que vous les avez.</p>
+            <h4 style="margin:0 0 6px; font-size:14px;">Commandez en ligne</h4>
+            <p style="margin:0; color:rgba(0,0,0,.68);">
+              Livraison rapide selon disponibilité des plateformes. Ajoutez les liens officiels dès que vous les avez.
+            </p>
           </div>
 
           <div class="inline-actions">
-            <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-            <a class="btn uber" href="#" aria-label="Uber Eats">Uber Eats</a>
+            <a class="btn primary" href="tel:0275650132" aria-label="Réserver par téléphone au 027 565 01 32">📞 Réservez maintenant</a>
+            <!-- Remplace # con link Uber Eats -->
+            <a class="btn uber" href="#" aria-label="Commander sur Uber Eats">Uber Eats</a>
           </div>
 
           <div class="mini-info">
@@ -245,7 +303,7 @@
           </div>
         </div>
 
-        <!-- Tab 2: Map -->
+        <!-- Map -->
         <div class="map" aria-label="Carte Google Maps">
           <iframe
             title="Carte — La Trattoria di Chez Ausilia"
@@ -258,8 +316,8 @@
     </div>
   </section>
 
-  <!-- FOOTER (pulito) -->
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
@@ -280,7 +338,7 @@
 
         <div class="footer-block">
           <div class="footer-title">Réserver</div>
-          <div class="footer-cta">
+          <div class="footer-text">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
           </div>
           <div style="margin-top:10px;">
@@ -305,8 +363,12 @@
     </div>
   </footer>
 
+  <!-- Fallback anno se JS disattivato -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      var y = document.getElementById('year');
+      if (y && !y.textContent) y.textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
