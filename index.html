@@ -20,9 +20,7 @@
     <header class="site-header" id="siteHeader">
       <div class="container">
         <div class="bar">
-          <!-- NAV SOPRA RIMOSSO: resta solo il brand -->
           <a class="brand" href="#top" aria-label="Aller à l'accueil">
-            <!-- logo rettangolare -->
             <img class="brand-logo brand-logo-rect" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
             <div class="brand-text">
               <div class="brand-name">La Trattoria di Chez Ausilia</div>
@@ -41,8 +39,6 @@
             <span>comme en Italie.</span>
           </h1>
 
-          <br><br>
-
           <div class="hero-actions">
             <a class="btn primary" href="tel:0275650132">📞 Réserver par téléphone</a>
             <a class="btn light" href="#menu">Découvrir le menu</a>
@@ -51,6 +47,13 @@
 
           <div class="hero-note hero-note-clean">
             Vins italiens sélectionnés • Desserts maison
+          </div>
+
+          <!-- PRO: trust strip -->
+          <div class="trust" aria-label="Points forts">
+            <div class="pill">⭐ Avis Google</div>
+            <div class="pill">🍝 Fait maison</div>
+            <div class="pill">📍 Saxon centre</div>
           </div>
         </div>
       </div>
@@ -66,9 +69,9 @@
       </div>
 
       <div class="offers-grid">
-        <div class="panel offer-card">1</div>
-        <div class="panel offer-card">2</div>
-        <div class="panel offer-card">3</div>
+        <div class="panel offer-card"></div>
+        <div class="panel offer-card"></div>
+        <div class="panel offer-card"></div>
       </div>
     </div>
   </section>
@@ -261,12 +264,11 @@
     </div>
   </section>
 
-  <!-- FOOTER COMPLETO (come prima) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <!-- ✅ SOLO QUI: logos.png + classe white card -->
           <img class="footer-logo footer-logo-white" src="assets/logos.png" alt="Logo La Trattoria di Chez Ausilia" />
           <div>
             <div class="footer-name">La Trattoria di Chez Ausilia</div>
@@ -278,7 +280,7 @@
           <div class="footer-title">Contact</div>
           <div class="footer-text">
             <a href="tel:0275650132">027 565 01 32</a><br/>
-            <a href="mailto:info@exemple.ch">info@exemple.ch</a>
+            <span>(E-mail : à venir)</span>
           </div>
         </div>
 
@@ -286,9 +288,6 @@
           <div class="footer-title">Réserver</div>
           <div class="footer-cta">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
-          </div>
-          <div style="margin-top:10px;">
-            <a class="btn dark" href="mailto:info@exemple.ch">✉️ Contacter par e-mail</a>
           </div>
         </div>
 
@@ -308,6 +307,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- PRO: sticky call solo mobile -->
+  <a class="sticky-call" href="tel:0275650132">📞 Appeler maintenant</a>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
