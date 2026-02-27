@@ -795,3 +795,108 @@ a{ color:inherit; text-decoration:none; }
   font-size:14px;
   backdrop-filter: blur(3px);
 }
+/* =========================
+   PREMIUM NAV + LOGO SHRINK ON SCROLL
+   Incolla in fondo a site.css
+   ========================= */
+
+/* Header sempre fisso e trasparente */
+.site-header{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+
+  transition: padding .25s ease, background .25s ease, backdrop-filter .25s ease !important;
+}
+
+/* Barra: centra logo */
+.site-header .bar{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Spazio header: in hero lo teniamo comodo */
+.site-header .container{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Compensa header fixed (regola se serve) */
+.top-hero{
+  padding-top: 140px !important;
+}
+
+/* LOGO grande (stato iniziale) */
+.brand-logo.brand-logo-rect{
+  height: 300px !important;          /* grande in hero */
+  width: auto !important;
+  max-width: none !important;
+
+  /* ALZALO: riduci/ aumenta qui finché è quasi a filo */
+  transform: translateY(-70px) !important;  /* <-- era -40, ora lo alziamo di più */
+
+  transition: height .25s ease, transform .25s ease, opacity .25s ease !important;
+  will-change: height, transform;
+}
+
+/* Stato SCROLL: header più "compatto" + logo più piccolo */
+.site-header.is-scrolled{
+  /* resta trasparente, ma puoi dare un filo di blur elegante */
+  background: rgba(0,0,0,0.00) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.site-header.is-scrolled .brand-logo.brand-logo-rect{
+  height: 110px !important;          /* logo piccolo elegante nel nav */
+  transform: translateY(0px) !important;
+}
+
+/* =========================
+   PILL: sfondo nero 60% + traccia nera del testo
+   ========================= */
+
+.pill{
+  background: rgba(0,0,0,0.60) !important;
+  color: #fff !important;
+  padding: 10px 16px !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+
+  /* traccia nera come "Vins italiens..." */
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000 !important;
+
+  backdrop-filter: blur(3px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+}
+
+/* stessa traccia anche sulla riga “Vins italiens…” */
+.hero-note-clean{
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000 !important;
+}
+
+/* (Assicurazione) NIENTE box nero sotto testo hero */
+.hero-right::before{ display:none !important; }
+.hero, .hero-right, .hero-box, .hero-card, .hero-panel{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
