@@ -101,3 +101,19 @@
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
 })();
+// Premium: logo grande in hero, poi si riduce quando scrolli
+(() => {
+  const header = document.getElementById("siteHeader");
+  if (!header) return;
+
+  const threshold = 20; // appena scendi un poco, compatta
+
+  const update = () => {
+    if (window.scrollY > threshold) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+  };
+
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+})();
