@@ -36,6 +36,11 @@
     <main class="hero-wrap" aria-label="Présentation">
       <div class="container">
         <div class="hero hero-right">
+          <!-- ✅ NUOVO: logo dentro hero, sopra al titolo -->
+          <div class="hero-logo-row">
+            <img class="hero-logo" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
+          </div>
+
           <h1 class="hero-title">
             Une vraie trattoria italienne,
             <span>comme en Italie.</span>
@@ -266,8 +271,8 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <!-- ✅ SOLO QUI: logos.png + classe white card -->
-          <img class="footer-logo footer-logo-white" src="assets/logos.png" alt="Logo La Trattoria di Chez Ausilia" />
+          <!-- footer: stesso logo.png ma con “cartellino” bianco via CSS -->
+          <img class="footer-logo footer-logo-whitecard" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
           <div>
             <div class="footer-name">La Trattoria di Chez Ausilia</div>
             <div class="footer-tag">Pl. de Gottefrey 2, 1907 Saxon • 027 565 01 32</div>
