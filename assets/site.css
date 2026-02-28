@@ -625,3 +625,72 @@ a{ color:inherit; text-decoration:none; }
   }
 
 }
+/* =========================
+   LOGO HERO
+========================= */
+
+/* 520px + 40% ≈ 728px */
+.brand-logo.brand-logo-rect{
+  width:728px;
+  height:auto;
+}
+
+/* alza il logo altri 20px */
+.hero-logo{
+  margin-top:-40px;
+}
+
+
+
+/* =========================
+   OFFRES CARDS (EDGE TO EDGE)
+========================= */
+
+/* togli padding esterno */
+.offer-card{
+  padding:0;
+  overflow:hidden;
+}
+
+/* contenuto interno */
+.offer-inner{
+  padding:22px;
+}
+
+/* immagine realmente da bordo a bordo */
+.offer-media{
+  width:100%;
+  height:190px;
+
+  object-fit:cover;
+  display:block;
+
+  border-radius:0;
+  border:none;
+  box-shadow:none;
+
+  margin:0;
+}
+
+
+/* responsive */
+
+@media (max-width:980px){
+
+  .brand-logo.brand-logo-rect{
+    width:520px;
+  }
+
+}
+
+@media (max-width:720px){
+
+  .brand-logo.brand-logo-rect{
+    width:360px;
+  }
+
+  .offer-media{
+    height:210px;
+  }
+
+}
