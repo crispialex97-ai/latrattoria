@@ -14,51 +14,140 @@
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/site.js" defer></script>
 
-  <!-- OVERRIDES mirati per OFFRES + LIVRAISON (senza stravolgere il resto) -->
+  <!-- OVERRIDES mirati per OFFRES + LIVRAISON + MAP CTA + HORAIRES -->
   <style>
-    /* Centrare titoli/sottotitoli e rendere le card più "premium" */
+    /* ---------- OFFRES: tipografia + separatore fine ---------- */
     .offer-card .offer-title{
       text-align:center;
       font-family:"Playfair Display", serif;
       letter-spacing:.6px;
       font-weight:800;
+      margin-bottom:.25rem;
     }
     .offer-card .offer-sub{
       text-align:center;
       font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       font-weight:600;
       opacity:.9;
-      margin-top:.35rem;
+      margin-top:.2rem;
+      margin-bottom:.6rem;
+    }
+    .offer-divider{
+      height:1px;
+      width:100%;
+      background:rgba(255,255,255,.14);
+      border-radius:999px;
+      margin:10px 0 14px 0;
     }
     .offer-card .offer-list{
       font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       font-size:0.98rem;
       line-height:1.45;
+      margin-top:0;
     }
-    .offer-card .offer-list li strong{
-      font-weight:800;
-    }
+    .offer-card .offer-list li strong{ font-weight:800; }
     .offer-card .offer-media{
       border-radius:14px;
       width:100%;
       display:block;
-      margin:14px auto 0 auto;
+      margin:12px auto 0 auto;
     }
 
-    /* Immagine edge-to-edge nel box Livraison */
+    /* ---------- LIVRAISON: immagine edge-to-edge ---------- */
     .delivery-media{
       width:100%;
       display:block;
       border-radius:14px;
       margin:12px 0 14px 0;
-      max-height:160px;        /* non troppo alta */
+      max-height:160px;
       object-fit:cover;
     }
 
-    /* (opzionale) rendi il box Livraison più pulito */
-    .ap-grid .panel h3{
-      font-family:"Playfair Display", serif;
+    /* ---------- MAP CTA: bottone rosso grande ---------- */
+    .map{
+      position:relative;
+    }
+    .map iframe{
+      border-radius:16px;
+      overflow:hidden;
+    }
+    .map-cta{
+      display:block;
+      margin-top:12px;
+    }
+    .btn-maps{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      padding:14px 16px;
+      border-radius:16px;
+      text-decoration:none;
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       font-weight:800;
+      letter-spacing:.2px;
+      background:#d81e1e;         /* rosso */
+      color:#fff;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.14);
+      transition:transform .12s ease, filter .12s ease;
+      user-select:none;
+    }
+    .btn-maps:hover{ transform:translateY(-1px); filter:brightness(1.02); }
+    .btn-maps:active{ transform:translateY(0px); filter:brightness(.98); }
+    .btn-maps small{
+      font-weight:700;
+      opacity:.9;
+      letter-spacing:0;
+    }
+
+    /* ---------- HORAIRES: tabella più premium ---------- */
+    .hours-table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .hours-table tr td{
+      padding:12px 14px;
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .hours-table tr:last-child td{ border-bottom:none; }
+
+    .hours-table tr td:first-child{
+      width:34%;
+      font-weight:800;
+      letter-spacing:.2px;
+      opacity:.95;
+    }
+    .hours-table tr td:last-child{
+      text-align:right;
+      font-weight:650;
+      opacity:.92;
+    }
+    .hours-table tr:nth-child(odd) td{
+      background:rgba(255,255,255,.03);
+    }
+    .hours-table tr:hover td{
+      background:rgba(255,255,255,.06);
+    }
+    .hours-closed{
+      color:#ffdddd;
+      font-weight:900;
+    }
+
+    /* ---------- Sezione head più pulita (micro) ---------- */
+    .section-head h2{
+      font-family:"Playfair Display", serif;
+      font-weight:900;
+      letter-spacing:.3px;
+    }
+    .section-head p{
+      max-width:720px;
     }
   </style>
 </head>
@@ -74,7 +163,6 @@
       <div class="container">
         <div class="hero hero-right">
 
-          <!-- LOGO SOPRA LA SCRITTA HERO -->
           <div class="hero-logo">
             <img class="brand-logo brand-logo-rect" src="assets/logo.png" alt="Logo La Trattoria di Chez Ausilia" />
           </div>
@@ -127,8 +215,8 @@
                 <h3 class="offer-title">OFFRE PETIT-DÉJEUNER</h3>
                 <p class="offer-sub">De 08:00 à 10:00</p>
 
-                <!-- IMMAGINE SUBITO SOTTO IL TITOLO -->
                 <img class="offer-media" src="assets/1.png" alt="Photo offre petit-déjeuner" loading="lazy">
+                <div class="offer-divider" aria-hidden="true"></div>
               </div>
             </div>
 
@@ -149,8 +237,8 @@
                 <h3 class="offer-title">APERITIVO</h3>
                 <p class="offer-sub">De 10:00 à 11:30</p>
 
-                <!-- IMMAGINE SUBITO SOTTO IL TITOLO -->
                 <img class="offer-media" src="assets/2.png" alt="Photo offre apéritif" loading="lazy">
+                <div class="offer-divider" aria-hidden="true"></div>
               </div>
             </div>
 
@@ -169,8 +257,8 @@
                 <h3 class="offer-title">CATERING</h3>
                 <p class="offer-sub">Sur réservation</p>
 
-                <!-- IMMAGINE SUBITO SOTTO IL TITOLO -->
                 <img class="offer-media" src="assets/3.png" alt="Photo offre catering" loading="lazy">
+                <div class="offer-divider" aria-hidden="true"></div>
               </div>
             </div>
 
@@ -317,7 +405,7 @@
       <div class="panel">
         <table class="hours-table" aria-label="Horaires d'ouverture">
           <tr><td>Lundi</td><td>08:00–14:00 • 18:00–22:00</td></tr>
-          <tr><td>Mardi</td><td><strong>Fermé</strong></td></tr>
+          <tr><td>Mardi</td><td class="hours-closed">Fermé</td></tr>
           <tr><td>Mercredi</td><td>08:00–14:00 • 18:00–22:00</td></tr>
           <tr><td>Jeudi</td><td>08:00–14:00 • 18:00–22:00</td></tr>
           <tr><td>Vendredi</td><td>08:00–14:00 • 18:00–22:00</td></tr>
@@ -344,7 +432,6 @@
           <h3>Livraison</h3>
           <p>Commandez facilement via <strong>Uber Eats</strong>.</p>
 
-          <!-- IMMAGINE edge-to-edge al posto di "Commandez en ligne" -->
           <img class="delivery-media" src="assets/delivery.jpg" alt="Livraison Uber Eats" loading="lazy">
 
           <p>Livraison rapide selon disponibilité des plateformes.</p>
@@ -368,6 +455,16 @@
                   referrerpolicy="no-referrer-when-downgrade"
                   src="https://www.google.com/maps?q=Pl.%20de%20Gottefrey%202,%201907%20Saxon&output=embed">
           </iframe>
+
+          <!-- BOTTONE GRANDE SOTTO MAPS -->
+          <div class="map-cta">
+            <a class="btn-maps"
+               href="https://www.google.com/maps/dir/?api=1&destination=Pl.%20de%20Gottefrey%202,%201907%20Saxon"
+               target="_blank" rel="noopener">
+              📍 Ouvrir dans Maps
+              <small>Itinéraire direct</small>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -420,7 +517,6 @@
     </div>
   </footer>
 
-  <!-- sticky call solo mobile -->
   <a class="sticky-call" href="tel:0275650132">📞 Appeler maintenant</a>
 </body>
 </html>
