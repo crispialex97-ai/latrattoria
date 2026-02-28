@@ -655,3 +655,35 @@ a{ color:inherit; text-decoration:none; }
 /* 4) Layout interno: padding corretto anche con immagine sopra */
 .offer-card{ padding: 18px !important; }
 .offer-inner{ padding: 0 !important; }
+/* immagini offerte stile rettangolare professionale */
+.offer-media,
+.offer-img{
+  width:100%;
+  height:170px;
+
+  object-fit:cover;
+  display:block;
+
+  /* niente angoli arrotondati */
+  border-radius:0 !important;
+
+  /* immagine da bordo a bordo */
+  margin:12px 0 12px 0;
+
+  border:none;
+  box-shadow:none;
+}
+
+/* card più pulite */
+.offer-card{
+  overflow:hidden;
+}
+
+/* titolo e immagine più vicini */
+.offer-title{
+  margin-bottom:6px;
+}
+
+.offer-sub{
+  margin-bottom:10px;
+}
