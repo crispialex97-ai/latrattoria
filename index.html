@@ -13,6 +13,54 @@
 
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/site.js" defer></script>
+
+  <!-- OVERRIDES mirati per OFFRES + LIVRAISON (senza stravolgere il resto) -->
+  <style>
+    /* Centrare titoli/sottotitoli e rendere le card più "premium" */
+    .offer-card .offer-title{
+      text-align:center;
+      font-family:"Playfair Display", serif;
+      letter-spacing:.6px;
+      font-weight:800;
+    }
+    .offer-card .offer-sub{
+      text-align:center;
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight:600;
+      opacity:.9;
+      margin-top:.35rem;
+    }
+    .offer-card .offer-list{
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size:0.98rem;
+      line-height:1.45;
+    }
+    .offer-card .offer-list li strong{
+      font-weight:800;
+    }
+    .offer-card .offer-media{
+      border-radius:14px;
+      width:100%;
+      display:block;
+      margin:14px auto 0 auto;
+    }
+
+    /* Immagine edge-to-edge nel box Livraison */
+    .delivery-media{
+      width:100%;
+      display:block;
+      border-radius:14px;
+      margin:12px 0 14px 0;
+      max-height:160px;        /* non troppo alta */
+      object-fit:cover;
+    }
+
+    /* (opzionale) rendi il box Livraison più pulito */
+    .ap-grid .panel h3{
+      font-family:"Playfair Display", serif;
+      font-weight:800;
+    }
+  </style>
 </head>
 
 <body>
@@ -87,15 +135,9 @@
             <ul class="offer-list">
               <li><strong>Café</strong> à <strong>CHF 3</strong></li>
               <li><strong>Cornetto + café + jus d’orange</strong> à <strong>CHF 5</strong></li>
+              <li><strong>Café + cornetto</strong> à <strong>CHF 4</strong></li>
+              <li><strong>Café + cornetto à emporter</strong> à <strong>CHF 2.50</strong></li>
             </ul>
-
-            <div class="offer-keywords" aria-label="Mots-clés">
-              <span>Petit-déjeuner</span>
-              <span>Café italien</span>
-              <span>Cornetto</span>
-              <span>Jus d’orange</span>
-              <span>Bon plan</span>
-            </div>
           </div>
         </article>
 
@@ -116,14 +158,6 @@
               <li><strong>Charcuterie italienne</strong> + <strong>2 verres de vin</strong> à <strong>25 €</strong></li>
               <li><strong>Spritz spécial</strong> à seulement <strong>7 €</strong></li>
             </ul>
-
-            <div class="offer-keywords" aria-label="Mots-clés">
-              <span>Apéro</span>
-              <span>Charcuterie</span>
-              <span>Vins italiens</span>
-              <span>Spritz</span>
-              <span>Entre amis</span>
-            </div>
           </div>
         </article>
 
@@ -144,14 +178,6 @@
               <li><strong>Organisation par téléphone</strong> : catering avec le <strong>menu du restaurant</strong></li>
               <li><strong>Tavola calda siciliana</strong> sur commande (arancini, pizzette, cartucciate)</li>
             </ul>
-
-            <div class="offer-keywords" aria-label="Mots-clés">
-              <span>Catering</span>
-              <span>Événements</span>
-              <span>Buffet</span>
-              <span>Sicilien</span>
-              <span>Sur réservation</span>
-            </div>
           </div>
         </article>
 
@@ -318,10 +344,10 @@
           <h3>Livraison</h3>
           <p>Commandez facilement via <strong>Uber Eats</strong>.</p>
 
-          <div class="subblock">
-            <h4>Commandez en ligne</h4>
-            <p>Livraison rapide selon disponibilité des plateformes.</p>
-          </div>
+          <!-- IMMAGINE edge-to-edge al posto di "Commandez en ligne" -->
+          <img class="delivery-media" src="assets/delivery.jpg" alt="Livraison Uber Eats" loading="lazy">
+
+          <p>Livraison rapide selon disponibilité des plateformes.</p>
 
           <div class="inline-actions">
             <a class="btn primary" href="tel:0275650132">📞 Réservez maintenant</a>
