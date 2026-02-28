@@ -556,3 +556,64 @@ a{ color:inherit; text-decoration:none; }
   }
   body{ padding-bottom: 76px; }
 }
+/* =========================
+   FIX PRO: LOGO (proporzionato) + 20px più su
+========================= */
+
+/* Logo: proporzionato (non gigante), con clamp per desktop/tablet/mobile */
+.brand-logo.brand-logo-rect{
+  width: clamp(320px, 52vw, 640px) !important; /* max 640, non enorme */
+  height: auto !important;
+}
+
+/* Alza ancora di 20px (prima era -40) */
+.hero-logo{
+  margin-top: -60px !important;
+}
+
+
+/* =========================
+   FIX PRO: OFFRES IMMAGINI EDGE-TO-EDGE
+   (funziona sia se l'img è dentro .offer-inner sia fuori)
+========================= */
+
+/* card pulita e premium */
+.offer-card{
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* immagini SEMPRE rettangolari, senza angoli */
+.offer-media{
+  display:block !important;
+  width:100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+
+  border-radius: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  margin: 0 !important;
+}
+
+/* ⭐ Se l'immagine sta DENTRO .offer-inner (che ha padding), la facciamo "full-bleed" */
+.offer-inner .offer-media{
+  margin-left: -18px !important;
+  margin-right: -18px !important;
+  width: calc(100% + 36px) !important;
+}
+
+/* un filo più premium: separazione immagine/testo */
+.offer-inner .offer-media{
+  margin-top: 10px !important;
+  margin-bottom: 12px !important;
+}
+
+/* responsive altezza immagine */
+@media (max-width: 980px){
+  .offer-media{ height: 220px !important; }
+}
+@media (max-width: 720px){
+  .offer-media{ height: 240px !important; }
+}
