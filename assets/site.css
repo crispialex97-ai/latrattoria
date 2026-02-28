@@ -628,3 +628,30 @@ a{ color:inherit; text-decoration:none; }
   }
   .offer-media{ height: 190px; }
 }
+/* 1) Logo 20px più in alto */
+.hero-logo{
+  margin-top: -20px;
+}
+
+/* 2) Disattiva eventuale "Offre du moment" se ti rimane da vecchio CSS */
+.offer-card::before,
+.offer-card::after{
+  content: none !important;
+}
+
+/* 3) Immagine subito sotto il titolo */
+.offer-media{
+  height: 170px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(234,223,206,.95);
+  box-shadow: 0 12px 24px rgba(0,0,0,.08);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 4) Layout interno: padding corretto anche con immagine sopra */
+.offer-card{ padding: 18px !important; }
+.offer-inner{ padding: 0 !important; }
