@@ -1,7 +1,15 @@
 // assets/site.js
-// Nessun effetto scroll sul header/logo. Solo anno nel footer (se vuoi farlo qui).
+// Script minimo del sito.
+// NON modifica header o scroll.
+// Serve solo per aggiornare automaticamente l'anno nel footer.
 
-document.addEventListener("DOMContentLoaded", () => {
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", function () {
+
+  const yearElement = document.getElementById("year");
+
+  if (yearElement) {
+    const currentYear = new Date().getFullYear();
+    yearElement.textContent = currentYear;
+  }
+
 });
