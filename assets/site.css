@@ -562,13 +562,13 @@ a{ color:inherit; text-decoration:none; }
 
 /* Logo: proporzionato (non gigante), con clamp per desktop/tablet/mobile */
 .brand-logo.brand-logo-rect{
-  width: clamp(320px, 52vw, 640px) !important; /* max 640, non enorme */
+  width: clamp(320px, 52vw, 320px) !important; /* max 640, non enorme */
   height: auto !important;
 }
 
 /* Alza ancora di 20px (prima era -40) */
 .hero-logo{
-  margin-top: -60px !important;
+  margin-top: -90px !important;
 }
 
 
