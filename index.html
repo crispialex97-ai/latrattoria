@@ -12,8 +12,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/site.css" />
-  <script src="assets/site.js" defer></script>
 
+  <!-- SEO BASE -->
+<meta name="robots" content="index, follow">
+<meta name="author" content="La Trattoria di Chez Ausilia">
+
+<!-- GEO (importantissimo per ristorante locale) -->
+<meta name="geo.region" content="CH-VS">
+<meta name="geo.placename" content="Saxon">
+<meta name="geo.position" content="46.1485;7.1733">
+<meta name="ICBM" content="46.1485, 7.1733">
+
+<!-- Open Graph (quando condividi su WhatsApp / Facebook) -->
+<meta property="og:title" content="La Trattoria di Chez Ausilia">
+<meta property="og:description" content="Cuisine italienne authentique à Saxon. Réservez maintenant.">
+<meta property="og:image" content="https://latrattoria.pages.dev/assets/logo.png">
+<meta property="og:type" content="restaurant">
+<meta property="og:url" content="https://latrattoria.pages.dev/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+  
+  <script src="assets/site.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "La Trattoria di Chez Ausilia",
+  "image": "https://latrattoria.pages.dev/assets/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Pl. de Gottefrey 2",
+    "addressLocality": "Saxon",
+    "postalCode": "1907",
+    "addressCountry": "CH"
+  },
+  "telephone": "+41275650132",
+  "servesCuisine": "Italian",
+  "url": "https://latrattoria.pages.dev/",
+  "priceRange": "$$",
+  "openingHours": [
+    "Mo 08:00-14:00 18:00-22:00",
+    "We-Su 08:00-14:00 18:00-22:00"
+  ]
+}
+</script>
   <!-- OVERRIDES mirati per OFFRES + LIVRAISON + MAP CTA + HORAIRES -->
   <style>
     /* ---------- OFFRES: tipografia + separatore fine ---------- */
