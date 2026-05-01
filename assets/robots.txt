@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://latrattoria.pages.dev/sitemap.xml
